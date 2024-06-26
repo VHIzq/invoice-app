@@ -1,3 +1,4 @@
+
 // Custom Theming for Angular Material // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
 // Plus imports for other components in your app.
@@ -6,6 +7,16 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+$light-palette: (
+    
+);
 
 // Define the theme object.
 $light-theme: mat.define-theme((
@@ -34,8 +45,7 @@ $dark-theme: mat.define-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 html {
-  @include mat.all-component-themes($light-theme);
-  @include mat.all-component-themes($dark-theme);
+  @include mat.all-component-themes($light-theme);  @include mat.all-component-themes($dark-theme);
 
   @media(prefers-color-scheme: light) {
     @include mat.core-color($light-theme);
