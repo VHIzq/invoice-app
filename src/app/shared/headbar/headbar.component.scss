@@ -1,0 +1,33 @@
+@use '../../utilities/settings' as settings;
+
+.headbar {
+  width: inherit;
+  display: flex;
+
+  &__logo-bg {
+    background-color: settings.$surface-icon;
+    padding: 10px;
+    border-radius: 0px 15px 15px 0;
+  }
+
+  &__mode-icon {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    margin-right: 25px;
+  }
+
+  &__image-profile {
+    background-image: url("../../../../public/assets/image-avatar.jpg");
+    width: 30px;
+    height: 30px;
+    margin-left: 25px;
+    max-inline-size: 100%;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    aspect-ratio: 2/1;
+    object-fit: contain;
+    object-position: center;
+  }
+}
