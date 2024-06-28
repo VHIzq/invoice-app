@@ -1,4 +1,8 @@
+@use "./utilities/settings" as settings;
+
 .container {
-    width: 100%;
-    max-width: 768px;
+  width: 100%;
+  max-width: 768px;
+  min-height: 667px;
+  background-color: settings.$surface-dark;
 }
