@@ -4,6 +4,7 @@ import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { CommonModule } from '@angular/common';
 import { HeadbarComponent } from './shared/headbar/headbar.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { NewInvoiceComponent } from './components/new-invoice/new-invoice.component';
 
 
 @Component({
@@ -14,7 +15,8 @@ import { FilterComponent } from './components/filter/filter.component';
     RouterOutlet, 
     SidenavComponent,
     HeadbarComponent,
-    FilterComponent
+    FilterComponent,
+    NewInvoiceComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

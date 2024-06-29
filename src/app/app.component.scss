@@ -6,8 +6,19 @@
   min-height: 667px;
   background-color: settings.$black-500;
   font-family: settings.$font-family;
+
+  &__layer{
+    padding: 0 25px;
+  }
 }
 
 .actions {
+  display: flex;
   color: whitesmoke;
+  margin-top: 20px;
+  justify-content: space-between;
+  
+  &__filter {
+    width: 30%;
+  }
 }
