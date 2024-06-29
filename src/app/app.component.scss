@@ -4,5 +4,10 @@
   width: 100%;
   max-width: 768px;
   min-height: 667px;
-  background-color: settings.$black-400;
+  background-color: settings.$black-500;
+  font-family: settings.$font-family;
+}
+
+.actions {
+  color: whitesmoke;
 }

@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { CommonModule } from '@angular/common';
 import { HeadbarComponent } from './shared/headbar/headbar.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 
 @Component({
@@ -12,7 +13,8 @@ import { HeadbarComponent } from './shared/headbar/headbar.component';
     CommonModule,
     RouterOutlet, 
     SidenavComponent,
-    HeadbarComponent
+    HeadbarComponent,
+    FilterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
