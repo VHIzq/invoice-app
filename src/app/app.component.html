@@ -1,16 +1,17 @@
 <div class="container">
-    <app-sidenav></app-sidenav>
-    <app-headbar></app-headbar>
-    <section class="container__layer">
-        <div class="actions">
-            <span class="actions__details">
-                <h2>Invoices</h2>
-                <small>7 invoices</small>
-            </span>
-            <app-filter
-                class="actions__filter"
-            ></app-filter>
-            <app-new-invoice></app-new-invoice>
-        </div>
-    </section>
+  <app-sidenav></app-sidenav>
+  <app-headbar></app-headbar>
+  <section class="container__layer">
+    <div class="actions">
+      <span class="actions__details">
+        <h2>Invoices</h2>
+        <small>{{ totalInvoices }} invoices</small>
+      </span>
+      <app-filter class="actions__filter"></app-filter>
+      <app-new-invoice></app-new-invoice>
+    </div>
+    @if (totalInvoices) {
+    <app-no-invoices class="container__no-invoices"></app-no-invoices>
+    }
+  </section>
 </div>

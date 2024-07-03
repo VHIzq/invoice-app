@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HeadbarComponent } from './shared/headbar/headbar.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { NewInvoiceComponent } from './components/new-invoice/new-invoice.component';
+import { NoInvoicesComponent } from './components/no-invoices/no-invoices.component';
 
 
 @Component({
@@ -16,11 +17,13 @@ import { NewInvoiceComponent } from './components/new-invoice/new-invoice.compon
     SidenavComponent,
     HeadbarComponent,
     FilterComponent,
-    NewInvoiceComponent
+    NewInvoiceComponent,
+    NoInvoicesComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'invoice-app';
+  totalInvoices = 7;
 }
