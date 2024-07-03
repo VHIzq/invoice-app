@@ -6,6 +6,7 @@ import { HeadbarComponent } from './shared/headbar/headbar.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { NewInvoiceComponent } from './components/new-invoice/new-invoice.component';
 import { NoInvoicesComponent } from './components/no-invoices/no-invoices.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 
 @Component({
@@ -18,7 +19,8 @@ import { NoInvoicesComponent } from './components/no-invoices/no-invoices.compon
     HeadbarComponent,
     FilterComponent,
     NewInvoiceComponent,
-    NoInvoicesComponent
+    NoInvoicesComponent,
+    InvoiceComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

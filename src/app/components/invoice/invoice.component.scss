@@ -1,0 +1,15 @@
+@use '../../utilities/settings' as settings;
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: settings.$black-400;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.payment__details, .payment__status {
+    display: flex;
+    flex-direction: column;
+}
+
