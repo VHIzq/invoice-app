@@ -1,4 +1,15 @@
+@use '../../utilities/settings' as settings;
+
 .btn {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    width: 90px;
+    height: 40px;
+    background-color: settings.$purple-400;
+    border-radius: 24px;
+    color: settings.$gray-400;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
 }
