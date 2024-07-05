@@ -1,43 +1,45 @@
-@use '../../utilities/settings' as settings;
+@use "../../utilities/settings" as settings;
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    background-color: settings.$black-400;
-    border-radius: 8px;
-    padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  background-color: settings.$black-400;
+  border-radius: 8px;
+  padding: 25px;
 }
 
 .payment {
-    &__details, &__status {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    &__code, &__total{
-        color: settings.$gray-300;
-        font-weight: bold;
-    }
+  &__details,
+  &__status {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
-    &__name {
-        text-align: right;
-    }
+  &__code,
+  &__total {
+    color: settings.$gray-300;
+    font-weight: bold;
+  }
 
-    &__status-code {
-        min-width: 104px;
-        width: 104px;
-        height: 40px;
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        border-radius: 6px;
-        filter: opacity(0.1);
-        background-color: settings.$green-300;
-    }
-    
-    &__status--text-color{
-        color: settings.$gray-600;
-        filter: opacity(10);
-    }
+  &__name {
+    text-align: right;
+  }
+
+  &__status-code {
+    min-width: 104px;
+    width: 104px;
+    height: 40px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    filter: opacity(0.1);
+    background-color: settings.$green-300;
+  }
+
+  &__status--text-color {
+    color: settings.$gray-600;
+    filter: opacity(10);
+  }
 }
