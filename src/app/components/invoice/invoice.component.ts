@@ -13,5 +13,5 @@ import { InvoiceModel } from './invoice.model';
 export class InvoiceComponent {
   @Input()
   invoices!: Array<InvoiceModel>;
-
+  invoiceStatus!: string;
 }

@@ -28,7 +28,6 @@ import { InvoiceModel } from './components/invoice/invoice.model';
 })
 export class AppComponent implements OnInit {
   title = 'invoice-app';
-  totalInvoices = 7;
   mockData!: Array<InvoiceModel>;
 
   constructor(private invoiceService: InvoiceService) {}

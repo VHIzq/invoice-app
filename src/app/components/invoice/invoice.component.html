@@ -1,17 +1,21 @@
 @for (invoice of invoices; track invoice.id) {
 <section class="container">
   <div class="payment__details">
-    <span class="payment__code">{{ invoice.id }} </span>
+    <span class="payment__code">#{{ invoice.id }} </span>
     <small class="payment__date">{{ invoice.paymentDue }} </small>
     <span class="payment__total">{{ invoice.total }} </span>
   </div>
   <div class="payment__status">
     <small class="payment__name">{{ invoice.clientName }} </small>
-    <!-- create ng class to change the color dinamically related to status -->
-    <span class="payment__status-code">
-      <span class="payment__status payment__status--text-color"
-        >{{ invoice.status }}
-      </span>
+    <span
+      class="payment__status-code"
+      [ngClass]="{
+      'payment__status--is-paid': invoice.status === 'paid',
+      'payment__status--is-pending': invoice.status === 'pending',
+      'payment__status--is-draft': invoice.status === 'draft',
+    }"
+    >
+      <span>{{ invoice.status }} </span>
     </span>
   </div>
 </section>

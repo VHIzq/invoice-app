@@ -6,6 +6,7 @@
   background-color: settings.$black-400;
   border-radius: 8px;
   padding: 25px;
+  margin-bottom: 20px;
 }
 
 .payment {
@@ -34,12 +35,19 @@
     justify-content: center;
     align-items: center;
     border-radius: 6px;
-    filter: opacity(0.1);
     background-color: settings.$green-300;
+    filter: opacity(0.2);
   }
 
-  &__status--text-color {
-    color: settings.$gray-600;
-    filter: opacity(10);
+  &__status--is-paid {
+    background-color: settings.$green-300;
+  }
+  
+  &__status--is-pending {
+    background-color: settings.$red-400;
+  }
+  
+  &__status--is-draft {
+    background-color: settings.$gray-300;
   }
 }
