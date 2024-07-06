@@ -5,14 +5,17 @@
     <div class="actions">
       <span class="actions__details">
         <h2>Invoices</h2>
-        <small>{{ totalInvoices }} invoices</small>
+        <small>{{ mockData?.length }} invoices</small>
       </span>
       <app-filter class="actions__filter"></app-filter>
       <app-new-invoice></app-new-invoice>
     </div>
-    @if (!totalInvoices) {
+    @if (!mockData) {
     <app-no-invoices class="container__no-invoices"></app-no-invoices>
     }
-    <app-invoice></app-invoice>
+    <app-invoice
+      [invoices]="mockData"
+    ></app-invoice>
+    
   </section>
 </main>

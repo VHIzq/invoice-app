@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, Input, input, Signal } from '@angular/core';
 import { InvoiceService } from '../../services/invoice.service';
 import { InvoiceModel } from './invoice.model';
 
@@ -10,19 +10,8 @@ import { InvoiceModel } from './invoice.model';
   templateUrl: './invoice.component.html',
   styleUrl: './invoice.component.scss',
 })
-export class InvoiceComponent implements OnInit {
-  mockData!: Array<InvoiceModel>;
+export class InvoiceComponent {
+  @Input()
+  invoices!: Array<InvoiceModel>;
 
-  constructor(private invoiceService: InvoiceService) {}
-  ngOnInit(): void {
-    this.setupMockData();
-  }
-
-  setupMockData() {
-    this.invoiceService
-      .getMockData()
-      .subscribe((invoices: Array<InvoiceModel>) => {
-        this.mockData = invoices;
-      });
-  }
 }
