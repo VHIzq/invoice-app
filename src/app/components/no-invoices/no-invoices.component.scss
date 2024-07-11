@@ -1,0 +1,17 @@
+@use "../../utilities/settings" as settings;
+
+.text-container {
+    text-align: center;
+
+    &__header {
+        color: settings.$white-400;
+        margin: 20px 0;
+        font-size: settings.$font-size-m;
+        font-weight: bold;
+    }
+
+    &__body {
+        font-size: 13px;
+        line-height: 15px;
+    }
+}

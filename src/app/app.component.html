@@ -11,11 +11,11 @@
       <app-new-invoice></app-new-invoice>
     </div>
     @if (!mockData) {
-    <app-no-invoices class="container__no-invoices"></app-no-invoices>
-    }
-    <app-invoice
+      <app-invoice
       [invoices]="mockData"
-    ></app-invoice>
-    
+      ></app-invoice>
+    } @else {
+      <app-no-invoices class="container__no-invoices"></app-no-invoices>
+    }
   </section>
 </main>
