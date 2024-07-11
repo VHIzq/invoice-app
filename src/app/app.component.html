@@ -10,12 +10,11 @@
       <app-filter class="actions__filter"></app-filter>
       <app-new-invoice></app-new-invoice>
     </div>
-    @if (!mockData) {
-      <app-invoice
-      [invoices]="mockData"
-      ></app-invoice>
+    @if (mockData) {
+    <app-invoice [invoices]="mockData"></app-invoice>
     } @else {
-      <app-no-invoices class="container__no-invoices"></app-no-invoices>
+    <app-no-invoices class="container__no-invoices"></app-no-invoices>
     }
+    <router-outlet></router-outlet>
   </section>
 </main>

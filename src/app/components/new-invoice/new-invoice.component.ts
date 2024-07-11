@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-invoice',
@@ -9,4 +9,11 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './new-invoice.component.html',
   styleUrl: './new-invoice.component.scss',
 })
-export class NewInvoiceComponent {}
+export class NewInvoiceComponent {
+  constructor(
+    private router: Router
+  ) {}
+  handleNavigation() {
+    this.router.navigateByUrl('/create-invoice');
+  }
+}
