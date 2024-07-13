@@ -1,4 +1,4 @@
-import { Component, OnInit, Signal, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { CommonModule } from '@angular/common';
@@ -35,11 +35,11 @@ export class AppComponent implements OnInit {
     this.setupMockData();
   }
 
-
   setupMockData() {
-    this.invoiceService.getMockData().subscribe((invoices: any) => {
-      this.mockData = invoices;
-    });
+    this.invoiceService
+      .getMockData()
+      .subscribe((invoices: Array<InvoiceModel>) => {
+        this.mockData = invoices;
+      });
   }
-
 }

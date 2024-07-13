@@ -10,10 +10,8 @@ import { Router } from '@angular/router';
   styleUrl: './new-invoice.component.scss',
 })
 export class NewInvoiceComponent {
-  constructor(
-    private router: Router
-  ) {}
+  constructor(private router: Router) {}
   handleNavigation() {
-    this.router.navigateByUrl('/create-invoice');
+    this.router.navigate(['create-invoice']);
   }
 }
