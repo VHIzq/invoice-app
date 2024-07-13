@@ -4,9 +4,13 @@ import { AppComponent } from './app.component';
 
 export const routes: Routes = [
   {
+    path: '',
+    component: AppComponent
+  },
+  {
     path: 'create-invoice',
     component: NewInvoiceFormComponent,
     title: 'Create Invoice',
   },
-  /* { path: '**', redirectTo: '/', title: 'Invoices', pathMatch: 'full' }, */
+ 
 ];
