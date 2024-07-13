@@ -14,4 +14,8 @@ export const routes: Routes = [
     component: NewInvoiceFormComponent,
     title: 'Create Invoice',
   },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
