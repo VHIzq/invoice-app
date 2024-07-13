@@ -1,5 +1,41 @@
-<section class="container">
-  <form [formGroup]="formInvoice" (ngSubmit)="handleSubmit()">
-    
-  </form>
-</section>
+<main class="form-container">
+  <h2 class="form-container__title">New Invoice</h2>
+  <section class="form-container__from">
+    <span class="form-container__subtitle">Bill From</span>
+    <form [formGroup]="formInvoice" (ngSubmit)="handleSubmit()">
+      <mat-form-field class="form-container__field">
+        <mat-label>Street Address</mat-label>
+        <input
+        class="form-container__input"
+          formControlName="streetAddressFrom"
+          matInput
+          placeholder="19 Union Terrace"
+          value=""
+        />
+      </mat-form-field>
+      
+      <div class="form-container__row">
+        <mat-form-field class="form-container__field">
+          <mat-label>City</mat-label>
+          <input
+           class="form-container__input"
+            formControlName="cityFrom"
+            matInput
+            placeholder="19 Union Terrace"
+            value=""
+          />
+        </mat-form-field>
+        <mat-form-field class="form-container__field">
+          <mat-label>City</mat-label>
+          <input
+           class="form-container__input"
+            formControlName="cityFrom"
+            matInput
+            placeholder="19 Union Terrace"
+            value=""
+          />
+        </mat-form-field>
+      </div>
+    </form>
+  </section>
+</main>

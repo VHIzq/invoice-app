@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormService } from '../../services/form.service';
+import { MatInputModule } from '@angular/material/input';
+
 
 @Component({
   selector: 'app-new-invoice-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatInputModule],
   templateUrl: './new-invoice-form.component.html',
   styleUrl: './new-invoice-form.component.scss',
 })
