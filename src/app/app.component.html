@@ -1,20 +1,6 @@
 <main class="container">
   <app-sidenav></app-sidenav>
   <app-headbar></app-headbar>
-  <section class="container__layer">
-    <div class="actions">
-      <span class="actions__details">
-        <h2>Invoices</h2>
-        <small>{{ mockData?.length }} invoices</small>
-      </span>
-      <app-filter class="actions__filter"></app-filter>
-      <app-new-invoice></app-new-invoice>
-    </div>
-    @if (mockData) {
-    <app-invoice [invoices]="mockData"></app-invoice>
-    } @else {
-    <app-no-invoices class="container__no-invoices"></app-no-invoices>
-    }
-  </section>
+  <app-home></app-home>
 </main>
 <router-outlet></router-outlet>
