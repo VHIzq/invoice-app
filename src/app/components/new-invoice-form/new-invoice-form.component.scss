@@ -17,4 +17,9 @@
     font-size: settings.$font-size-s-vnt;
     color: settings.$purple-300;
   }
+
+  &__row {
+    display: flex;
+    gap: 10px;
+  }
 }

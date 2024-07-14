@@ -15,6 +15,7 @@ export class FormService {
       postCodeFrom :['', Validators.required],
       countryFrom: ['', Validators.required],
       clientNameTo: ['', Validators.required],
+      clientEmailTo: ['', Validators.required],
       streetAddressTo: ['', Validators.required],
       cityTo: ['', Validators.required],
       postCodeTo :['', Validators.required],

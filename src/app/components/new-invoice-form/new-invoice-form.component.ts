@@ -2,12 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormService } from '../../services/form.service';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-new-invoice-form',
   standalone: true,
-  imports: [ReactiveFormsModule, MatInputModule],
+  providers: [provideNativeDateAdapter()],
+  imports: [
+    ReactiveFormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatButtonModule,
+  ],
   templateUrl: './new-invoice-form.component.html',
   styleUrl: './new-invoice-form.component.scss',
 })

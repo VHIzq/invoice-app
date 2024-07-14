@@ -1,20 +1,12 @@
 @use "../utilities/settings" as stgs;
 
-.form-container{
-  
+.form-container {
   &__input {
-    background-color: stgs.$black-400;
     border-radius: 4px;
+    background-color: stgs.$black-400;
   }
   
   &__field {
     width: 100%;
   }
-
-  &__row {
-    display: flex;
-    gap: 10px;
-  }
-
 }
-
