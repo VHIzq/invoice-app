@@ -24,7 +24,7 @@
     stgs.$black-300,
     stgs.$gray-400,
     stgs.$white-400,
-    stgs.$gray-400,
+    stgs.$gray-400
   );
 }
 
@@ -33,7 +33,7 @@
     stgs.$black-500,
     stgs.$gray-400,
     stgs.$white-400,
-    stgs.$black-400,
+    stgs.$black-400
   );
 }
 
@@ -42,6 +42,11 @@
     stgs.$red-400,
     stgs.$white-400,
     stgs.$red-500,
-    stgs.$white-400,
+    stgs.$white-400
   );
+}
+
+.button-large {
+  width: 100%;
+  display: inline-block;
 }

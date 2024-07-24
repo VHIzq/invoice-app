@@ -21,6 +21,10 @@
   &__row {
     display: flex;
     gap: 10px;
+
+    &--footer {
+      background-color: settings.$black-400;
+    }
   }
 
 }

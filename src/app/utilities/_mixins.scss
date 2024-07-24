@@ -10,6 +10,8 @@
   color: $text-color;
   font-size: stgs.$font-size-s;
   border: none;
+  border-radius: 24px;
+  padding: 15px 12px;
   font-weight: bold;
 
   &:hover {

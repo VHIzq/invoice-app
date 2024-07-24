@@ -1,5 +1,6 @@
 @forward "../src/app/utilities/utilities";
-@forward '../src/app/utilities/generic';
+@forward "../src/app/utilities/generic";
+
 @use "../src/app/utilities/settings" as settings;
 @use "../src/app/utilities/input";
 @use "../src/app/utilities/buttons";
@@ -12,9 +13,7 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 
 $light-palette: ();
 
