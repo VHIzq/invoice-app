@@ -1,2 +1,47 @@
-@use '../utilities/settings' as stgs;
+@use "../utilities/settings" as stgs;
+@use "../utilities/mixins" as mixins;
 
+.button-invoice {
+  @include mixins.button-custom(
+    stgs.$purple-400,
+    stgs.$gray-400,
+    stgs.$purple-300,
+    stgs.$white-400
+  );
+}
+
+.button-paid {
+  @include mixins.button-custom(
+    stgs.$black-300,
+    stgs.$gray-400,
+    stgs.$white-400,
+    stgs.$white-400
+  );
+}
+
+.button-edit {
+  @include mixins.button-custom(
+    stgs.$black-300,
+    stgs.$gray-400,
+    stgs.$white-400,
+    stgs.$gray-400,
+  );
+}
+
+.button-draft {
+  @include mixins.button-custom(
+    stgs.$black-500,
+    stgs.$gray-400,
+    stgs.$white-400,
+    stgs.$black-400,
+  );
+}
+
+.button-deleted {
+  @include mixins.button-custom(
+    stgs.$red-400,
+    stgs.$white-400,
+    stgs.$red-500,
+    stgs.$white-400,
+  );
+}

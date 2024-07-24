@@ -1,0 +1,19 @@
+@use "./settings" as stgs;
+
+@mixin button-custom(
+  $button-color,
+  $text-color,
+  $hover-color,
+  $text-hover-color
+) {
+  background-color: $button-color;
+  color: $text-color;
+  font-size: stgs.$font-size-s;
+  border: none;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $hover-color;
+    color: $text-hover-color;
+  }
+}
