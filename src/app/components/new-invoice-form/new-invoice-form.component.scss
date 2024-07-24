@@ -1,4 +1,4 @@
-@use "../../utilities/settings" as settings;
+@use "../../utilities/settings" as stgs;
 
 .form-container {
   min-height: 100vh;
@@ -8,14 +8,22 @@
   font-weight: bold;
 
   &__title {
-    color: settings.$white-400;
-    font-size: settings.$font-size-m;
-    line-height: 32px;
+    color: stgs.$white-400;
+    font-size: stgs.$font-size-m;
+    margin-top: 10px;
   }
 
   &__subtitle {
-    font-size: settings.$font-size-s-vnt;
-    color: settings.$purple-300;
+    font-size: stgs.$font-size-s-vnt;
+    color: stgs.$purple-300;
+    display: block;
+    margin: 30px 0;
+  }
+
+  &__item-list {
+    color: stgs.$gray-700;
+    display: block;
+    margin: 30px 0;
   }
 
   &__row {
@@ -23,8 +31,13 @@
     gap: 10px;
 
     &--footer {
-      background-color: settings.$black-400;
+      background-color: stgs.$black-400;
     }
   }
+}
 
+.form__back-anchor {
+  color: stgs.$white-400;
+  display: inline-block;
+  margin: 10px 0;
 }

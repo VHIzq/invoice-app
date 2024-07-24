@@ -1,4 +1,17 @@
 <main class="form-container">
+  <!-- TODO: fix routerLink, is not routing -->
+  <a class="form__back-anchor" routerLink="/">
+    <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M6.342.886L2.114 5.114l4.228 4.228"
+        stroke="#9277FF"
+        stroke-width="2"
+        fill="none"
+        fill-rule="evenodd"
+      />
+    </svg>
+    <small> Go back </small>
+  </a>
   <h2 class="form-container__title">New Invoice</h2>
   <section class="form-container__from">
     <span class="form-container__subtitle">Bill From</span>
@@ -145,7 +158,7 @@
           value=""
         />
       </mat-form-field>
-      <span>Item List</span>
+      <span class="form-container__item-list">Item List</span>
       <mat-form-field class="form-container__field">
         <mat-label>Item Name</mat-label>
         <input
@@ -187,7 +200,7 @@
           />
         </mat-form-field>
       </div>
-      <button class="button-edit button-large"> + Add new item</button>
+      <button class="button-edit button-large">+ Add new item</button>
       <div class="form-container__row form-container__row--footer">
         <button class="button-draft">Discard</button>
         <button class="button-edit">Save as Draft</button>
