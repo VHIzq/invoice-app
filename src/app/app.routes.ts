@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { NewInvoiceFormComponent } from './components/new-invoice-form/new-invoice-form.component';
 import { HomeComponent } from './components/home/home.component';
+import { InvoiceFormComponent } from './components/invoice-form/invoice-form.component';
 
 export const routes: Routes = [
   {
@@ -10,7 +10,7 @@ export const routes: Routes = [
   },
   {
     path: 'create-invoice',
-    component: NewInvoiceFormComponent,
+    component: InvoiceFormComponent,
     title: 'Create Invoice',
   },
   {

@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FooterActionsComponent } from '../../shared/footer-actions/footer-actions.component';
 
 @Component({
-  selector: 'app-new-invoice-form',
+  selector: 'app-invoice-form',
   standalone: true,
   providers: [provideNativeDateAdapter()],
   imports: [
@@ -18,10 +18,10 @@ import { FooterActionsComponent } from '../../shared/footer-actions/footer-actio
     MatButtonModule,
     FooterActionsComponent
   ],
-  templateUrl: './new-invoice-form.component.html',
-  styleUrl: './new-invoice-form.component.scss',
+  templateUrl: './invoice-form.component.html',
+  styleUrl: './invoice-form.component.scss',
 })
-export class NewInvoiceFormComponent implements OnInit {
+export class InvoiceFormComponent implements OnInit {
   formInvoice!: FormGroup;
   constructor(private formService: FormService) {}
 
