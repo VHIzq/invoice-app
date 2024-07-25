@@ -1,5 +1,9 @@
 <div class="form-container__row form-container__row--footer">
+  @if (paymentActions?.isDiscard) {
   <button class="button-draft">Discard</button>
+  } @if (paymentActions?.isDraft) {
   <button class="button-edit">Save as Draft</button>
+  } @if (paymentActions?.isSend) {
   <button class="button-invoice" type="submit">Save & Send</button>
+  }
 </div>
