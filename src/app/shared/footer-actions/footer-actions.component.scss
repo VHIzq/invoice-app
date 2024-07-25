@@ -1,0 +1,9 @@
+@use "../../utilities/settings" as stgs;
+
+.form-container__row {
+  &--footer {
+    background-color: stgs.$black-400;
+    display: flex;
+    justify-content: space-between;
+  }
+}

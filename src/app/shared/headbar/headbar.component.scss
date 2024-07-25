@@ -1,11 +1,11 @@
-@use "../../utilities/settings" as settings;
+@use "../../utilities/settings" as stgs;
 
 .headbar {
   width: inherit;
   display: flex;
 
   &__logo-bg {
-    background-color: settings.$purple-400;
+    background-color: stgs.$purple-400;
     padding: 10px;
     border-radius: 0px 15px 15px 0;
   }
@@ -34,5 +34,5 @@
 
 mat-toolbar {
   padding: 0 15px 0 0;
-  background-color: settings.$black-400;
+  background-color: stgs.$black-400;
 }

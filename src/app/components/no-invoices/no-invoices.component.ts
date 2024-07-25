@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
   templateUrl: './no-invoices.component.html',
   styleUrl: './no-invoices.component.scss'
 })
-export class NoInvoicesComponent {
-
-}
+export class NoInvoicesComponent {}

@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { FooterActionsComponent } from '../../shared/footer-actions/footer-actions.component';
 
 @Component({
   selector: 'app-new-invoice-form',
@@ -15,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatDatepickerModule,
     MatButtonModule,
+    FooterActionsComponent
   ],
   templateUrl: './new-invoice-form.component.html',
   styleUrl: './new-invoice-form.component.scss',
