@@ -13,10 +13,14 @@ export class FooterActionsComponent implements OnInit {
   paymentActions?: PaymentActions;
 
   ngOnInit(): void {
-    this.setupInitialActions();
+    this.setupFormActions();
   }
 
-  setupInitialActions() {
-    this.paymentActions ??= { isDiscard: true, isDraft: true, isSend: true };
+  setupFormActions() {
+    if (false) {
+      this.paymentActions ??= { isDiscard: true, isDraft: true, isSend: true };
+    } else {
+      this.paymentActions ??= { isCancel: true, isChange: true };
+    }
   }
 }

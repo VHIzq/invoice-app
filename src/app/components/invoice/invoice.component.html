@@ -7,7 +7,7 @@
   </div>
   <div class="payment__status">
     <small class="payment__name">{{ invoice.clientName }} </small>
-    <span
+    <button
       class="payment__status-code"
       [ngClass]="{
       'payment__status--is-paid': invoice.status === 'paid',
@@ -16,7 +16,7 @@
     }"
     >
       <span>{{ invoice.status }} </span>
-    </span>
+  </button>
   </div>
 </section>
 }

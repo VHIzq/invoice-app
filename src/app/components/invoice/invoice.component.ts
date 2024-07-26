@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, Input, input, Signal } from '@angular/core';
-import { InvoiceService } from '../../services/invoice.service';
+import { Component, Input } from '@angular/core';
 import { InvoiceModel } from './invoice.model';
 
 @Component({

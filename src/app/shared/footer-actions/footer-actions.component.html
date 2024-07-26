@@ -5,5 +5,9 @@
   <button class="button-edit">Save as Draft</button>
   } @if (paymentActions?.isSend) {
   <button class="button-invoice" type="submit">Save & Send</button>
+  } @if (paymentActions?.isCancel) {
+    <button class="button-edit">Cancel</button>
+  } @if (paymentActions?.isChange) {
+    <button class="button-invoice">Save changes</button>
   }
 </div>
