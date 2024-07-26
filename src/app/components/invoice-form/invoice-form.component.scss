@@ -1,11 +1,8 @@
 @use "../../utilities/settings" as stgs;
+@use "../../utilities/mixins" as mixins;
 
 .form-container {
-  min-height: 100vh;
-  width: 100%;
-  max-width: 768px;
-  padding: 0 15px;
-  font-weight: bold;
+  @include mixins.configMobileDisplay();
 
   &__title {
     color: stgs.$white-400;
@@ -30,10 +27,4 @@
     display: flex;
     gap: 10px;
   }
-}
-
-.form__back-anchor {
-  color: stgs.$white-400;
-  display: inline-block;
-  margin: 10px 0;
 }

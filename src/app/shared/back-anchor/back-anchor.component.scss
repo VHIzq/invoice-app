@@ -1,0 +1,7 @@
+@use '../../utilities/settings' as stgs;
+
+.back-anchor {
+    color: stgs.$white-400;
+    display: inline-block;
+    margin: 10px 0;
+  }

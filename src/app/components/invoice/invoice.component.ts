@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 export class InvoiceComponent {
   @Input()
   invoices!: Array<InvoiceModel>;
+
   invoiceStatus!: string;
   url = 'status-invoice';
 }

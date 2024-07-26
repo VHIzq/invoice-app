@@ -7,6 +7,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterActionsComponent } from '../../shared/footer-actions/footer-actions.component';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { BackAnchorComponent } from '../../shared/back-anchor/back-anchor.component';
 
 @Component({
   selector: 'app-invoice-form',
@@ -18,6 +19,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
     MatDatepickerModule,
     MatButtonModule,
     FooterActionsComponent,
+    BackAnchorComponent
   ],
   templateUrl: './invoice-form.component.html',
   styleUrl: './invoice-form.component.scss',

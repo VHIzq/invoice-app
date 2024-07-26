@@ -1,0 +1,16 @@
+@use '../../utilities/mixins' as mixins;
+@use '../../utilities/settings' as stgs;
+
+
+.container {
+    @include mixins.configMobileDisplay();
+
+    .status-payment {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: stgs.$black-400;
+        height: 91px;
+        margin-top: 15px;
+    }
+}
