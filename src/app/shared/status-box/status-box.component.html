@@ -1,10 +1,10 @@
 <span
+  class="status-code"
   [ngClass]="{
         'is-paid': invoice === 'Paid',
         'is-pending': invoice === 'Pending',
         'is-draft': invoice === 'Draft',
       }"
-  class="status-code"
 >
-  {{invoice}}
+  {{ invoice }}
 </span>

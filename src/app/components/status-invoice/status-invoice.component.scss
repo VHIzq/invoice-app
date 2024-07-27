@@ -1,16 +1,50 @@
-@use '../../utilities/mixins' as mixins;
-@use '../../utilities/settings' as stgs;
-
+@use "../../utilities/mixins" as mixins;
+@use "../../utilities/settings" as stgs;
 
 .container {
-    @include mixins.configMobileDisplay();
+  @include mixins.configMobileDisplay();
 
-    .status-payment {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: stgs.$black-400;
-        height: 91px;
-        margin-top: 15px;
+  .status-payment {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    align-items: center;
+    background-color: stgs.$black-400;
+    height: 91px;
+    margin: 15px 0;
+    border-radius: stgs.$border-radius;
+  }
+
+  .description-payment {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    background-color: stgs.$black-400;
+    border-radius: stgs.$border-radius;
+
+    &__left-column {
+      display: flex;
+      flex-direction: column;
     }
+
+    &__right-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__inner-layout {
+      background-color: stgs.$black-400;
+    }
+
+    &__items {
+      display: flex;
+      justify-content: space-between;
+      background-color: stgs.$black-300;
+    }
+  }
+
+  .space-up {
+    margin-top: 30px;
+  }
 }
