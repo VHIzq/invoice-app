@@ -7,17 +7,9 @@
   </div>
   <div class="payment__status">
     <small class="payment__name">{{ invoice.clientName }} </small>
-    <button
-      [routerLink]="url"
-      class="payment__status-code"
-      [ngClass]="{
-      'payment__status--is-paid': invoice.status === 'paid',
-      'payment__status--is-pending': invoice.status === 'pending',
-      'payment__status--is-draft': invoice.status === 'draft',
-    }"
-    >
-      <span>{{ invoice.status }} </span>
-  </button>
+    <app-status-button
+      [invoice]="invoice"
+    ></app-status-button>
   </div>
 </section>
 }

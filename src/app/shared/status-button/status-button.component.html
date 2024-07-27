@@ -1,0 +1,11 @@
+<button
+  [routerLink]="url"
+  class="status-code"
+  [ngClass]="{
+      'is-paid': invoice.status === 'paid',
+      'is-pending': invoice.status === 'pending',
+      'is-draft': invoice.status === 'draft',
+    }"
+>
+  <span>{{ invoice.status }} </span>
+</button>

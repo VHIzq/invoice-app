@@ -26,28 +26,4 @@
   &__name {
     text-align: right;
   }
-
-  &__status-code {
-    min-width: 104px;
-    width: 104px;
-    height: 40px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    background-color: settings.$green-300;
-    filter: opacity(0.2);
-  }
-
-  &__status--is-paid {
-    background-color: settings.$green-300;
-  }
-  
-  &__status--is-pending {
-    background-color: settings.$red-400;
-  }
-  
-  &__status--is-draft {
-    background-color: settings.$gray-300;
-  }
 }

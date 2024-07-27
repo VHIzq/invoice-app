@@ -1,0 +1,10 @@
+<span
+  [ngClass]="{
+        'payment__status--is-paid': invoice?.status === 'paid',
+        'payment__status--is-pending': invoice?.status === 'pending',
+        'payment__status--is-draft': invoice?.status === 'draft',
+      }"
+  class="payment__status-code"
+>
+  Pending
+</span>
