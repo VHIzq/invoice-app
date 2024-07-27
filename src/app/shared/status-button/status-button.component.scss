@@ -1,4 +1,4 @@
-@use "../../utilities/settings" as settings;
+@use "../../utilities/settings" as stgs;
 
 .status-code {
   min-width: 104px;
@@ -11,13 +11,13 @@
 }
 
 .is-paid {
-  background-color: settings.$green-300;
+  background-color: stgs.$green-300;
 }
 
 .is-pending {
-  background-color: settings.$red-400;
+  background-color: stgs.$red-400;
 }
 
 .is-draft {
-  background-color: settings.$gray-300;
+  background-color: stgs.$gray-300;
 }

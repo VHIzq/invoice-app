@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './status-box.component.scss'
 })
 export class StatusBoxComponent {
-  invoice!: InvoiceModel;
+  invoice: any = 'Pending'
 
 
 }
