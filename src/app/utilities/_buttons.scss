@@ -37,7 +37,7 @@
   );
 }
 
-.button-deleted {
+.button-delete {
   @include mixins.button-custom(
     stgs.$red-400,
     stgs.$white-400,

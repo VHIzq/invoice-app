@@ -1,13 +1,17 @@
 <div class="form-container__row form-container__row--footer">
   @if (paymentActions?.isDiscard) {
-  <button class="button-draft">Discard</button>
+  <button class="button-draft">{{ paymentActions?.isDiscard?.label }}</button>
   } @if (paymentActions?.isDraft) {
-  <button class="button-edit">Save as Draft</button>
+  <button class="button-edit">{{ paymentActions?.isDraft?.label }}</button>
   } @if (paymentActions?.isSend) {
-  <button class="button-invoice" type="submit">Save & Send</button>
+  <button class="button-invoice" type="submit">
+    {{ paymentActions?.isSend?.label }}
+  </button>
   } @if (paymentActions?.isCancel) {
-    <button class="button-edit">Cancel</button>
+  <button class="button-edit">{{ paymentActions?.isCancel?.label }}</button>
   } @if (paymentActions?.isChange) {
-    <button class="button-invoice">Save changes</button>
+  <button class="button-invoice">{{ paymentActions?.isChange?.label }}</button>
+  } @if (paymentActions?.isDelete) {
+  <button class="button-delete">{{ paymentActions?.isDelete?.label }}</button>
   }
 </div>

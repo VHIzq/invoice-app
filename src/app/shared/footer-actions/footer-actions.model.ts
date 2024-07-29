@@ -1,8 +1,13 @@
 export interface PaymentActions {
-    isDiscard?: boolean;
-    isDraft?: boolean;
-    isSend?: boolean;
-    isChange?: boolean;
-    isDelete?: boolean;
-    isCancel?: boolean;
+    isDiscard?: ActionConfig;
+    isDraft?: ActionConfig;
+    isSend?: ActionConfig;
+    isChange?: ActionConfig;
+    isDelete?: ActionConfig;
+    isCancel?: ActionConfig;
+}
+
+interface ActionConfig {
+    isAction?: boolean;
+    label?: string;
 }

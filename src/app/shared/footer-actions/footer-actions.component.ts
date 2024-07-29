@@ -22,10 +22,24 @@ export class FooterActionsComponent implements OnInit {
   setupFormActions() {
     const mode = this.activatedRoute.snapshot.data['mode'];
     if (mode === 'new') {
-      this.paymentActions ??= { isDiscard: true, isDraft: true, isSend: true };
-    } 
+      this.paymentActions ??= {
+        isDiscard: { isAction: true, label: 'Discard' },
+        isDraft: { isAction: true, label: 'Save as Draft' },
+        isSend: { isAction: true, label: 'Save & Send' },
+      };
+    }
     if (mode === 'edit') {
-      this.paymentActions ??= { isCancel: true, isChange: true };
+      this.paymentActions ??= {
+        isCancel: { isAction: true, label: 'Cancel' },
+        isChange: { isAction: true, label: 'Save Changes' },
+      };
+    }
+    if (mode === 'status') {
+      this.paymentActions ??= {
+        isDraft: { isAction: true, label: 'Edit' },
+        isDelete: { isAction: true, label: 'Delete' },
+        isSend: { isAction: true, label: 'Mark as Paid' },
+      };
     }
   }
 }
