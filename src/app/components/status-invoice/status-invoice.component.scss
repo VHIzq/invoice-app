@@ -4,6 +4,13 @@
 .container {
   @include mixins.configMobileDisplay();
 
+  .outer-layout {
+    background-color: stgs.$black-400;
+    border-radius: stgs.$border-radius;
+    padding: 0 25px 25px;
+
+  }
+
   .status-payment {
     display: flex;
     justify-content: space-between;
@@ -18,7 +25,6 @@
   .description-payment {
     display: flex;
     justify-content: space-between;
-    padding: 0 25px;
     background-color: stgs.$black-400;
     border-radius: stgs.$border-radius;
 
@@ -50,8 +56,8 @@
       display: flex;
       justify-content: space-between;
       background-color: stgs.$black-600;
-      padding: 20px 35px;
-      border-radius: 8px;
+      padding: 30px 35px;
+      border-radius: 0  0 stgs.$border-radius, stgs.$border-radius;
     }
   }
 

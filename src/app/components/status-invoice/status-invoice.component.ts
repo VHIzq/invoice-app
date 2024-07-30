@@ -18,4 +18,8 @@ import { FooterActionsComponent } from "../../shared/footer-actions/footer-actio
   templateUrl: './status-invoice.component.html',
   styleUrl: './status-invoice.component.scss',
 })
-export class StatusInvoiceComponent {}
+export class StatusInvoiceComponent {
+  deleteInvoice() {
+    console.log('invoice deleted');
+  }
+}

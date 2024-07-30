@@ -4,45 +4,49 @@
     <span><small>Status</small></span>
     <app-status-box></app-status-box>
   </div>
-  <div class="description-payment">
-    <div class="description-payment__left-column">
-      <span class="space-up"><strong>#XM9141</strong></span>
-      <span><small>Graphic Design</small></span>
-      <span class="space-up"><small>19 Union Terrace</small></span>
-      <span><small>United Kingdom</small></span>
-      <span class="space-up"><small>Invoice Data</small></span>
-      <span><strong>21 Aug 2021</strong></span>
-      <span class="space-up"><small>Payment Due</small></span>
-      <span><strong>20 Sep 2021</strong></span>
-      <span class="space-up"><small>Sent to</small></span>
-      <span><strong>alex&#64;mail.com</strong></span>
-    </div>
-    <div class="description-payment__right-column">
-      <span><small>Bill To</small></span>
-      <span class="space-up"><strong>Alex Grim</strong></span>
-      <span><small>84 Church Way</small></span>
-      <span><small>Bradford</small></span>
-      <span><small>BD19PB</small></span>
-      <span><small>United Kingdom</small></span>
-    </div>
-  </div>
-  <div class="description-payment__inner-layout">
-    <div class="description-payment__items">
+  <div class="outer-layout">
+    <div class="description-payment">
       <div class="description-payment__left-column">
-        <span><strong>Banner Design</strong></span>
-        <span><small>1 x 156.00</small></span>
-        <span><strong>Banner Design</strong></span>
-        <span><small>1 x 156.00</small></span>
+        <span class="space-up"><strong>#XM9141</strong></span>
+        <span><small>Graphic Design</small></span>
+        <span class="space-up"><small>19 Union Terrace</small></span>
+        <span><small>United Kingdom</small></span>
+        <span class="space-up"><small>Invoice Data</small></span>
+        <span><strong>21 Aug 2021</strong></span>
+        <span class="space-up"><small>Payment Due</small></span>
+        <span><strong>20 Sep 2021</strong></span>
+        <span class="space-up"><small>Sent to</small></span>
+        <span><strong>alex&#64;mail.com</strong></span>
       </div>
       <div class="description-payment__right-column">
-        <span><strong>156</strong></span>
-        <span><strong>400</strong></span>
+        <span><small>Bill To</small></span>
+        <span class="space-up"><strong>Alex Grim</strong></span>
+        <span><small>84 Church Way</small></span>
+        <span><small>Bradford</small></span>
+        <span><small>BD19PB</small></span>
+        <span><small>United Kingdom</small></span>
       </div>
     </div>
-    <div class="description-payment__amount">
-      <span><small>Amount Due</small></span>
-      <h2>$1557.00</h2>
+    <div class="description-payment__inner-layout">
+      <div class="description-payment__items">
+        <div class="description-payment__left-column">
+          <span><strong>Banner Design</strong></span>
+          <span><small>1 x 156.00</small></span>
+          <span><strong>Banner Design</strong></span>
+          <span><small>1 x 156.00</small></span>
+        </div>
+        <div class="description-payment__right-column">
+          <span><strong>156</strong></span>
+          <span><strong>400</strong></span>
+        </div>
+      </div>
+      <div class="description-payment__amount">
+        <span><small>Amount Due</small></span>
+        <h2>$ 1557.00</h2>
+      </div>
     </div>
   </div>
 </section>
-<app-footer-actions></app-footer-actions>
+<app-footer-actions
+  (click)="deleteInvoice()"
+></app-footer-actions>
