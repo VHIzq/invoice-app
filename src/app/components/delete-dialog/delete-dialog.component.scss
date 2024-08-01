@@ -1,0 +1,11 @@
+@use '../../utilities/settings' as stgs;
+.dialog-delete {
+    background-color: stgs.$black-300;
+    font-family: stgs.$font-family;
+    padding: 20px 0;
+    
+}
+.title-mat-dialog-title {
+    color: whitesmoke;
+    text-align: center;
+}
