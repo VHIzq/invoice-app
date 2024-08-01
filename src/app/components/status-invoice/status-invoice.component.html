@@ -32,12 +32,12 @@
         <div class="description-payment__left-column">
           <span><strong>Banner Design</strong></span>
           <span><small>1 x 156.00</small></span>
-          <span><strong>Banner Design</strong></span>
+          <span class="space-up"><strong>Banner Design</strong></span>
           <span><small>1 x 156.00</small></span>
         </div>
         <div class="description-payment__right-column">
           <span><strong>156</strong></span>
-          <span><strong>400</strong></span>
+          <span class="space-up"><strong>400</strong></span>
         </div>
       </div>
       <div class="description-payment__amount">
@@ -47,7 +47,8 @@
     </div>
   </div>
 </section>
-<button mat-raised-button (click)="openDialog() >Delete</button>
+<!-- <button mat-raised-button>Delete</button> -->
+<button mat-raised-button (click)="openDialog('0ms', '0ms')">Open dialog without animation</button>
 <app-footer-actions
-  (click)="deleteInvoice()"
 ></app-footer-actions>
+<!-- <app-delete-dialog></app-delete-dialog> -->

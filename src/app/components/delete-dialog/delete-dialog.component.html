@@ -1,1 +1,15 @@
-<p>delete-dialog works!</p>
+<h2 mat-dialog-title>Confirm Deletion</h2>
+<mat-dialog-content>
+  Are you sure you want to delete invoice XM4191. This action cannot be undone
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button
+    (click)="onDeleteInvoice()"
+    mat-button
+    mat-dialog-close
+    cdkFocusInitial
+  >
+    Delete
+  </button>
+</mat-dialog-actions>

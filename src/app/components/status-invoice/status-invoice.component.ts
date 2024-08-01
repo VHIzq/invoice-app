@@ -4,6 +4,7 @@ import { BackAnchorComponent } from '../../shared/back-anchor/back-anchor.compon
 import { StatusBoxComponent } from '../../shared/status-box/status-box.component';
 import { FooterActionsComponent } from '../../shared/footer-actions/footer-actions.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-status-invoice',
@@ -16,6 +17,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     BackAnchorComponent,
     StatusBoxComponent,
     FooterActionsComponent,
+    DeleteDialogComponent
   ],
   templateUrl: './status-invoice.component.html',
   styleUrl: './status-invoice.component.scss',
@@ -27,7 +29,18 @@ export class StatusInvoiceComponent {
     console.log('invoice deleted');
   }
 
-  openDialog() {
-    const dialogRed = this.dialog.open();
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+
+    dialogRef.afterClosed().subscribe((confirmDelete) => {
+      if (confirmDelete?.reason === 'deleteAction') {
+        this.deleteInvoice();
+      }
+    })
   }
 }
