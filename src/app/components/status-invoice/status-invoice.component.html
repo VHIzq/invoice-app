@@ -1,4 +1,4 @@
-<section class="container space-down">
+<section class="container">
   <app-back-anchor></app-back-anchor>
   <div class="status-payment">
     <span><small>Status</small></span>
@@ -46,9 +46,11 @@
       </div>
     </div>
   </div>
+  <div class="status-buttons space-up">
+    <button class="button-edit button-s">Edit</button>
+    <button class="button-delete button-s" (click)="openDialog('0ms', '0ms')">
+      Delete
+    </button>
+    <button class="button-invoice button-m">Mark as paid</button>
+  </div>
 </section>
-<!-- <button mat-raised-button>Delete</button> -->
-<button mat-raised-button (click)="openDialog('0ms', '0ms')">Open dialog without animation</button>
-<app-footer-actions
-></app-footer-actions>
-<!-- <app-delete-dialog></app-delete-dialog> -->
