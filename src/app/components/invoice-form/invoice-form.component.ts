@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormService } from '../../services/form.service';
 import { MatInputModule } from '@angular/material/input';
@@ -6,7 +6,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterActionsComponent } from '../../shared/footer-actions/footer-actions.component';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { BackAnchorComponent } from '../../shared/back-anchor/back-anchor.component';
 
 @Component({
