@@ -34,3 +34,8 @@
   justify-content: space-between;
   padding-bottom: 20px;
 }
+
+:host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {  
+  background-color: stgs.$black-400;
+  border-radius: 4px;
+}
