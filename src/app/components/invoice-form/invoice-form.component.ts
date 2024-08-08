@@ -21,7 +21,7 @@ import { BackAnchorComponent } from '../../shared/back-anchor/back-anchor.compon
     MatDatepickerModule,
     MatButtonModule,
     FooterActionsComponent,
-    BackAnchorComponent
+    BackAnchorComponent,
   ],
   templateUrl: './invoice-form.component.html',
   styleUrl: './invoice-form.component.scss',
@@ -30,7 +30,7 @@ export class InvoiceFormComponent implements OnInit {
   titleForm?: string;
   idInvoice: string = 'XM9141';
   formInvoice!: FormGroup;
-  
+
   constructor(
     private formService: FormService,
     private route: ActivatedRoute
@@ -62,18 +62,31 @@ export class InvoiceFormComponent implements OnInit {
 
   setupInitialFakeForm() {
     this.formInvoice?.controls['cityFrom'].setValue(faker.location.city());
-    this.formInvoice.controls['streetAddressFrom'].setValue(faker.location.street());
-    this.formInvoice.controls['postCodeFrom'].setValue(faker.location.zipCode());
+    this.formInvoice.controls['streetAddressFrom'].setValue(
+      faker.location.street()
+    );
+    this.formInvoice.controls['postCodeFrom'].setValue(
+      faker.location.zipCode()
+    );
     this.formInvoice.controls['countryFrom'].setValue(faker.location.country());
-    this.formInvoice.controls['clientNameTo'].setValue(faker.person.firstName());
-    this.formInvoice.controls['clientEmailTo'].setValue(faker.person.jobTitle());
-    this.formInvoice.controls['streetAddressTo'].setValue(faker.location.street());
+    this.formInvoice.controls['clientNameTo'].setValue(
+      faker.person.firstName()
+    );
+    this.formInvoice.controls['clientEmailTo'].setValue(faker.internet.email(), [
+      faker.person.firstName,
+      faker.person.lastName,
+    ]);
+    this.formInvoice.controls['streetAddressTo'].setValue(
+      faker.location.street()
+    );
     this.formInvoice.controls['cityTo'].setValue(faker.location.city());
     this.formInvoice.controls['postCodeTo'].setValue(faker.location.zipCode());
     this.formInvoice.controls['countryTo'].setValue(faker.location.country());
     this.formInvoice.controls['invoiceDate'].setValue(faker.date.weekday());
     this.formInvoice.controls['paymentTerms'].setValue(true);
-    this.formInvoice.controls['projectDescription'].setValue(faker.lorem.sentence());
+    this.formInvoice.controls['projectDescription'].setValue(
+      faker.lorem.sentence()
+    );
     this.formInvoice.controls['itemName'].setValue(faker.commerce.product());
     this.formInvoice.controls['quantity'].setValue(faker.number.int(9));
     this.formInvoice.controls['price'].setValue(faker.commerce.price());
