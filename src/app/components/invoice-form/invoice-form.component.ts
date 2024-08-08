@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FooterActionsComponent } from '../../shared/footer-actions/footer-actions.component';
 import { ActivatedRoute } from '@angular/router';
 import { BackAnchorComponent } from '../../shared/back-anchor/back-anchor.component';
+import { ItemCardComponent } from '../item-card/item-card.component';
 
 @Component({
   selector: 'app-invoice-form',
@@ -22,13 +23,14 @@ import { BackAnchorComponent } from '../../shared/back-anchor/back-anchor.compon
     MatButtonModule,
     FooterActionsComponent,
     BackAnchorComponent,
+    ItemCardComponent
   ],
   templateUrl: './invoice-form.component.html',
   styleUrl: './invoice-form.component.scss',
 })
 export class InvoiceFormComponent implements OnInit {
   titleForm?: string;
-  idInvoice: string = 'XM9141';
+  idInvoice = faker.number.int(2000);
   formInvoice!: FormGroup;
 
   constructor(
@@ -72,18 +74,18 @@ export class InvoiceFormComponent implements OnInit {
     this.formInvoice.controls['clientNameTo'].setValue(
       faker.person.firstName()
     );
-    this.formInvoice.controls['clientEmailTo'].setValue(faker.internet.email(), [
-      faker.person.firstName,
-      faker.person.lastName,
-    ]);
+    this.formInvoice.controls['clientEmailTo'].setValue(
+      faker.internet.email(),
+      [faker.person.firstName, faker.person.lastName]
+    );
     this.formInvoice.controls['streetAddressTo'].setValue(
       faker.location.street()
     );
     this.formInvoice.controls['cityTo'].setValue(faker.location.city());
     this.formInvoice.controls['postCodeTo'].setValue(faker.location.zipCode());
     this.formInvoice.controls['countryTo'].setValue(faker.location.country());
-    this.formInvoice.controls['invoiceDate'].setValue(faker.date.weekday());
-    this.formInvoice.controls['paymentTerms'].setValue(true);
+    this.formInvoice.controls['invoiceDate'].setValue(faker.date.recent());
+    this.formInvoice.controls['paymentTerms'].setValue(faker.lorem.paragraph());
     this.formInvoice.controls['projectDescription'].setValue(
       faker.lorem.sentence()
     );

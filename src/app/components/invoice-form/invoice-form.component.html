@@ -147,55 +147,17 @@
         />
       </mat-form-field>
       <span class="form-container__item-list">Item List</span>
-      <mat-form-field class="form-container__field">
-        <mat-label>Item Name</mat-label>
-        <input
-          class="form-container__input"
-          formControlName="itemName"
-          matInput
-          value=""
-        />
-      </mat-form-field>
-      <div class="form-container__row">
-        <mat-form-field class="form-container__field">
-          <mat-label>Qty</mat-label>
-          <input
-            class="form-container__input"
-            formControlName="quantity"
-            matInput
-            placeholder="1"
-            value=""
-          />
-        </mat-form-field>
-        <mat-form-field class="form-container__field">
-          <mat-label>Price</mat-label>
-          <input
-            class="form-container__input"
-            formControlName="price"
-            matInput
-            placeholder="450"
-            value=""
-          />
-        </mat-form-field>
-        <mat-form-field class="form-container__field">
-          <mat-label>Total</mat-label>
-          <input
-            class="form-container__input"
-            formControlName="total"
-            matInput
-            placeholder="1200"
-            value=""
-          />
-        </mat-form-field>
-      </div>
+        <app-item-card></app-item-card>
       <button class="button-edit util-line-jump button-large">
         + Add new item
       </button>
+      <div class="invoice-form-buttons">
+        <button class="button-edit">Discard</button>
+        <button class="button-draft button-m-vnt">Save as Draft</button>
+        <button type="submit" class="button-invoice button-m">
+          Save & Send
+        </button>
+      </div>
     </form>
   </section>
-  <div class="invoice-form-buttons">
-    <button class="button-edit" >Discard</button>
-    <button class="button-draft button-m-vnt" >Save as Draft</button>
-    <button class="button-invoice button-m" >Save & Send</button>
-  </div>
 </main>
