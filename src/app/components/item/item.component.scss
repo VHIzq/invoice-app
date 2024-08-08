@@ -1,0 +1,22 @@
+.container-items {
+    display: flex;
+    justify-content: space-between;
+
+    &__left-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__right-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.actions-items {
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}

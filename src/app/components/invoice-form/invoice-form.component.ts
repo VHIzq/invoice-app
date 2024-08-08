@@ -11,6 +11,9 @@ import { FooterActionsComponent } from '../../shared/footer-actions/footer-actio
 import { ActivatedRoute } from '@angular/router';
 import { BackAnchorComponent } from '../../shared/back-anchor/back-anchor.component';
 import { ItemCardComponent } from '../item-card/item-card.component';
+import { CommonModule } from '@angular/common';
+import { ItemCard } from '../../models/item-card.model';
+import { ItemComponent } from '../item/item.component';
 
 @Component({
   selector: 'app-invoice-form',
@@ -23,15 +26,26 @@ import { ItemCardComponent } from '../item-card/item-card.component';
     MatButtonModule,
     FooterActionsComponent,
     BackAnchorComponent,
-    ItemCardComponent
+    ItemCardComponent,
+    CommonModule,
+    ItemComponent
   ],
   templateUrl: './invoice-form.component.html',
   styleUrl: './invoice-form.component.scss',
 })
 export class InvoiceFormComponent implements OnInit {
   titleForm?: string;
-  idInvoice = faker.number.int(2000);
   formInvoice!: FormGroup;
+  itemList: Array<ItemCard> = [
+    {
+      itemName: 'Paper',
+      quantity: '2',
+      price: '124',
+      total: '234',
+    },
+  ];
+
+  private idInvoice = faker.number.int(2000);
 
   constructor(
     private formService: FormService,
@@ -43,16 +57,20 @@ export class InvoiceFormComponent implements OnInit {
     this.setupTitleForm();
   }
 
-  setupInitialForm() {
-    this.formInvoice = this.formService.createForm();
-    this.setupInitialFakeForm();
-  }
-
   handleSubmit() {
     console.log('submit');
   }
 
-  setupTitleForm() {
+  addNewItem() {
+    this.itemList.push();
+  }
+
+  private setupInitialForm() {
+    this.formInvoice = this.formService.createForm();
+    this.setupInitialFakeForm();
+  }
+
+  private setupTitleForm() {
     const mode = this.route.snapshot.data['mode'];
     if (mode === 'new') {
       this.titleForm = 'New Invoice';
@@ -62,7 +80,7 @@ export class InvoiceFormComponent implements OnInit {
     }
   }
 
-  setupInitialFakeForm() {
+  private setupInitialFakeForm() {
     this.formInvoice?.controls['cityFrom'].setValue(faker.location.city());
     this.formInvoice.controls['streetAddressFrom'].setValue(
       faker.location.street()
@@ -89,9 +107,5 @@ export class InvoiceFormComponent implements OnInit {
     this.formInvoice.controls['projectDescription'].setValue(
       faker.lorem.sentence()
     );
-    this.formInvoice.controls['itemName'].setValue(faker.commerce.product());
-    this.formInvoice.controls['quantity'].setValue(faker.number.int(9));
-    this.formInvoice.controls['price'].setValue(faker.commerce.price());
-    this.formInvoice.controls['total'].setValue(faker.commerce.price());
   }
 }
