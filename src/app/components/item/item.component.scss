@@ -1,6 +1,7 @@
 .container-items {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 20px, 0px;
 
     &__left-column {
         display: flex;
@@ -12,10 +13,13 @@
         flex-direction: column;
         justify-content: center;
     }
+
+    &__amount {
+        text-align: center;
+    }
 }
 
 .actions-items {
-    border: 1px solid red;
     width: 100%;
     display: flex;
     justify-content: space-around;
