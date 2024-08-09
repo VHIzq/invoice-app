@@ -28,7 +28,7 @@ import { ItemComponent } from '../item/item.component';
     BackAnchorComponent,
     ItemCardComponent,
     CommonModule,
-    ItemComponent
+    ItemComponent,
   ],
   templateUrl: './invoice-form.component.html',
   styleUrl: './invoice-form.component.scss',

@@ -1,23 +1,22 @@
-<mat-card class="" appearance="outlined">
-    <mat-card-content>
-      <div class="container-items">
-        <div class="container-items__left-column">
-          <span><strong>Banner Design</strong></span>
-          <span><small>1 x $156.00</small></span>
-        </div>
-        <div class="container-items__right-column">
-          <span><strong>$156.00</strong></span>
-        </div>
+@for (item of itemList; track $index) {
+<mat-card class="space-up" appearance="outlined">
+  <mat-card-content>
+    <div class="container-items">
+      <div class="container-items__left-column">
+        <span><strong> {{ item.itemName }} </strong></span>
+        <span class="space-up"><small> {{ item.quantity }} x ${{ item.price}} </small></span>
       </div>
-      <div class="container-items__amount space-up">
+      <div class="container-items__right-column">
         <span><small>Amount Due</small></span>
-        <h2 class="space-up">$156.00</h2>
+        <h2 class="space-up">$ {{calculateTotalPerItem(item)}} </h2>
       </div>
-    </mat-card-content>
-    <mat-card-footer class="actions-items space-up">
-      <mat-chip-set>
-        <mat-chip>edit</mat-chip>
-        <mat-chip>delete</mat-chip>
-      </mat-chip-set>
-    </mat-card-footer>
-  </mat-card>
+    </div>
+  </mat-card-content>
+  <mat-card-footer class="actions-items space-up">
+    <mat-chip-set>
+      <mat-chip>edit</mat-chip>
+      <mat-chip>delete</mat-chip>
+    </mat-chip-set>
+  </mat-card-footer>
+</mat-card>
+}

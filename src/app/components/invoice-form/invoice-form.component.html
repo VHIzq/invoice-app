@@ -6,83 +6,155 @@
     <form [formGroup]="formInvoice" (ngSubmit)="handleSubmit()">
       <mat-form-field class="form-container__field">
         <mat-label>Street Address</mat-label>
-        <input class="form-container__input" formControlName="streetAddressFrom" matInput placeholder="19 Union Terrace"
-          value="" />
+        <input
+          class="form-container__input"
+          formControlName="streetAddressFrom"
+          matInput
+          placeholder="19 Union Terrace"
+          value=""
+        />
       </mat-form-field>
 
       <div class="form-container__row">
         <mat-form-field class="form-container__field">
           <mat-label>City</mat-label>
-          <input class="form-container__input" formControlName="cityFrom" matInput placeholder="Mexico City" value="" />
+          <input
+            class="form-container__input"
+            formControlName="cityFrom"
+            matInput
+            placeholder="Mexico City"
+            value=""
+          />
         </mat-form-field>
         <mat-form-field class="form-container__field">
           <mat-label>Post Code</mat-label>
-          <input class="form-container__input" formControlName="postCodeFrom" matInput placeholder="04600" value="" />
+          <input
+            class="form-container__input"
+            formControlName="postCodeFrom"
+            matInput
+            placeholder="04600"
+            value=""
+          />
         </mat-form-field>
       </div>
       <mat-form-field class="form-container__field">
         <mat-label>Country</mat-label>
-        <input class="form-container__input" formControlName="countryFrom" matInput placeholder="Mexico" value="" />
+        <input
+          class="form-container__input"
+          formControlName="countryFrom"
+          matInput
+          placeholder="Mexico"
+          value=""
+        />
       </mat-form-field>
       <span class="form-container__subtitle">Bill To</span>
       <mat-form-field class="form-container__field">
         <mat-label>Client's Name</mat-label>
-        <input class="form-container__input" formControlName="clientNameTo" matInput placeholder="Joe" value="" />
+        <input
+          class="form-container__input"
+          formControlName="clientNameTo"
+          matInput
+          placeholder="Joe"
+          value=""
+        />
       </mat-form-field>
       <mat-form-field class="form-container__field">
         <mat-label>Client's Email</mat-label>
-        <input class="form-container__input" formControlName="clientEmailTo" matInput placeholder="example@domain.com"
-          value="" />
+        <input
+          class="form-container__input"
+          formControlName="clientEmailTo"
+          matInput
+          placeholder="example@domain.com"
+          value=""
+        />
       </mat-form-field>
 
       <mat-form-field class="form-container__field">
         <mat-label>Street Address</mat-label>
-        <input class="form-container__input" formControlName="streetAddressTo" matInput placeholder="19 Union Terrace"
-          value="" />
+        <input
+          class="form-container__input"
+          formControlName="streetAddressTo"
+          matInput
+          placeholder="19 Union Terrace"
+          value=""
+        />
       </mat-form-field>
 
       <div class="form-container__row">
         <mat-form-field class="form-container__field">
           <mat-label>City</mat-label>
-          <input class="form-container__input" formControlName="cityTo" matInput placeholder="Mexico City" value="" />
+          <input
+            class="form-container__input"
+            formControlName="cityTo"
+            matInput
+            placeholder="Mexico City"
+            value=""
+          />
         </mat-form-field>
         <mat-form-field class="form-container__field">
           <mat-label>Post Code</mat-label>
-          <input class="form-container__input" formControlName="postCodeTo" matInput placeholder="04600" value="" />
+          <input
+            class="form-container__input"
+            formControlName="postCodeTo"
+            matInput
+            placeholder="04600"
+            value=""
+          />
         </mat-form-field>
       </div>
       <mat-form-field class="form-container__field">
         <mat-label>Country</mat-label>
-        <input class="form-container__input" formControlName="countryTo" matInput placeholder="Mexico" value="" />
+        <input
+          class="form-container__input"
+          formControlName="countryTo"
+          matInput
+          placeholder="Mexico"
+          value=""
+        />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Invoice date</mat-label>
-        <input formControlName="invoiceDate" matInput [matDatepicker]="picker" />
+        <input
+          formControlName="invoiceDate"
+          matInput
+          [matDatepicker]="picker"
+        />
         <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <mat-form-field class="form-container__field">
         <mat-label>Payment Terms</mat-label>
-        <input class="form-container__input" formControlName="paymentTerms" matInput placeholder="Net 30 days"
-          value="" />
+        <input
+          class="form-container__input"
+          formControlName="paymentTerms"
+          matInput
+          placeholder="Net 30 days"
+          value=""
+        />
       </mat-form-field>
       <mat-form-field class="form-container__field">
         <mat-label>Project Description</mat-label>
-        <input class="form-container__input" formControlName="projectDescription" matInput placeholder="Graphic Design"
-          value="" />
+        <input
+          class="form-container__input"
+          formControlName="projectDescription"
+          matInput
+          placeholder="Graphic Design"
+          value=""
+        />
       </mat-form-field>
       <span class="form-container__item-list">Item List</span>
-
       <app-item></app-item>
-
-
-      @for (item of itemList; track $index) {
       <app-item-card></app-item-card>
-      }
 
       <!-- TODO: add confirmation dialog before save and send item -->
-      <button class="button-edit util-line-jump button-large" (click)="addNewItem()">
+      <button
+        class="button-edit util-line-jump button-large"
+        (click)="addNewItem()"
+      >
         + Add new item
       </button>
       <div class="invoice-form-buttons">
