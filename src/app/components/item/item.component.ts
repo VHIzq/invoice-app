@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { ItemCard } from '../../models/item-card.model';
@@ -13,6 +13,10 @@ import { DeleteDialogItemComponent } from '../delete-dialog-item/delete-dialog-i
   styleUrl: './item.component.scss',
 })
 export class ItemComponent {
+  
+  @Input()
+  itemAdded?: any;
+  
   constructor(private dialog: MatDialog) {}
 
   deleteItem(idItem: string) {

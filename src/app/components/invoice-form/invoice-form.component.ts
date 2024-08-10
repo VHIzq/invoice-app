@@ -36,6 +36,10 @@ import { ItemComponent } from '../item/item.component';
 export class InvoiceFormComponent implements OnInit {
   titleForm?: string;
   formInvoice!: FormGroup;
+
+  itemAdded?: any;
+
+
   itemList: Array<ItemCard> = [
     {
       itemName: 'Paper',
@@ -59,10 +63,6 @@ export class InvoiceFormComponent implements OnInit {
 
   handleSubmit() {
     console.log('submit');
-  }
-
-  addNewItem() {
-    this.itemList.push();
   }
 
   private setupInitialForm() {

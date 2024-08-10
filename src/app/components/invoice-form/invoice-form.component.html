@@ -147,16 +147,8 @@
         />
       </mat-form-field>
       <span class="form-container__item-list">Item List</span>
-      <app-item></app-item>
-      <app-item-card></app-item-card>
-
-      <!-- TODO: add confirmation dialog before save and send item -->
-      <button
-        class="button-edit util-line-jump button-large"
-        (click)="addNewItem()"
-      >
-        + Add new item
-      </button>
+      <app-item [itemAdded]="itemAdded" ></app-item>
+      <app-item-card (newItem)="itemAdded = $event" ></app-item-card>
       <div class="invoice-form-buttons">
         <button class="button-edit">Discard</button>
         <button class="button-draft button-m-vnt">Save as Draft</button>

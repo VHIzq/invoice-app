@@ -1,9 +1,10 @@
 import { faker } from '@faker-js/faker';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormService } from '../../services/form.service';
+import { ItemCard } from '../../models/item-card.model';
 
 @Component({
   selector: 'app-item-card',
@@ -15,16 +16,27 @@ import { FormService } from '../../services/form.service';
 export class ItemCardComponent implements OnInit {
   formItem!: FormGroup;
 
-  constructor(
-    private formService: FormService,
-  ) {}
+  newItem = new EventEmitter<ItemCard>();
+
+  constructor(private formService: FormService) {}
+
+  addNewItem() {
+    const item: ItemCard = {
+      itemName: this.formItem.controls['itemName'].value,
+      quantity: this.formItem.controls['quantity'].value,
+      price: this.formItem.controls['price'].value,
+      total: this.formItem.controls['total'].value,
+    };
+
+    this.newItem.emit(item);
+    console.log({item});
+  }
 
   private setupInitialForm() {
     this.formItem = this.formService.createForm();
     this.setupInitialFakeForm();
-
   }
-  
+
   ngOnInit(): void {
     this.setupInitialForm();
   }
