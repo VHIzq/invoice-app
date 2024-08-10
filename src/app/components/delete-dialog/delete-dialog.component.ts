@@ -3,10 +3,7 @@ import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {
-  MatDialog,
-  MatDialogClose,
   MatDialogRef,
-  MatDialogTitle,
   MatDialogActions,
   MatDialogContent,
 } from '@angular/material/dialog';
@@ -29,5 +26,9 @@ export class DeleteDialogComponent {
 
   onDeleteInvoice() {
     this.dialogRef.close({ reason: 'deleteAction' });
+  }
+
+  onCancel() {
+    this.dialogRef.close();
   }
 }

@@ -4,13 +4,10 @@
     Are you sure you want to delete invoice XM4191. This action cannot be undone
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button
-      class="button-delete button-m"
-      (click)="onDeleteInvoice()"
-      mat-dialog-close
-      cdkFocusInitial
-    >
+    <div (click)="onCancel()">
+      <button mat-button mat-dialog-close>Cancel</button>
+    </div>
+    <button class="button-delete button-m" (click)="onDeleteInvoice()" mat-dialog-close cdkFocusInitial>
       Delete
     </button>
   </mat-dialog-actions>

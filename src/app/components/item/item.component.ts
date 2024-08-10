@@ -3,7 +3,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { ItemCard } from '../../models/item-card.model';
 import { MatDialog } from '@angular/material/dialog';
-import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
+import { DeleteDialogItemComponent } from '../delete-dialog-item/delete-dialog-item.component';
 
 @Component({
   selector: 'app-item',
@@ -44,7 +44,7 @@ export class ItemComponent {
     exitAnimationDuration: string,
     itemId: string
   ): void {
-    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+    const dialogRef = this.dialog.open(DeleteDialogItemComponent, {
       width: '250px',
       enterAnimationDuration,
       exitAnimationDuration,
