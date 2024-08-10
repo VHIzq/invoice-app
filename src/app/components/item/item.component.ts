@@ -41,7 +41,8 @@ export class ItemComponent {
 
   openDialog(
     enterAnimationDuration: string,
-    exitAnimationDuration: string
+    exitAnimationDuration: string,
+    itemId: string
   ): void {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
       width: '250px',
@@ -51,7 +52,7 @@ export class ItemComponent {
 
     dialogRef.afterClosed().subscribe((confirmDelete) => {
       if (confirmDelete?.reason === 'deleteAction') {
-        this.deleteItem('2324');
+        this.deleteItem(itemId);
         console.log('list after delete', this.itemList);
       }
     });

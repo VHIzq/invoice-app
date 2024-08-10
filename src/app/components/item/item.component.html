@@ -15,7 +15,7 @@
   <mat-card-footer class="actions-items space-up">
     <mat-chip-set>
       <mat-chip>edit</mat-chip>
-      <mat-chip (click)="openDialog('500ms', '250ms')">delete</mat-chip>
+      <mat-chip (click)="openDialog('500ms', '250ms', item.itemId ?? '')">delete</mat-chip>
     </mat-chip-set>
   </mat-card-footer>
 </mat-card>
