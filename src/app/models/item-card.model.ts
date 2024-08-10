@@ -3,4 +3,5 @@ export interface ItemCard {
   quantity: string;
   price: string;
   total?: string;
+  itemId?: string;
 }

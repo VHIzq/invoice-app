@@ -1,4 +1,4 @@
-@for (item of itemList; track $index) {
+@for (item of itemList; track item.itemName) {
 <mat-card class="space-up" appearance="outlined">
   <mat-card-content>
     <div class="container-items">
@@ -15,7 +15,7 @@
   <mat-card-footer class="actions-items space-up">
     <mat-chip-set>
       <mat-chip>edit</mat-chip>
-      <mat-chip>delete</mat-chip>
+      <mat-chip (click)="openDialog('500ms', '250ms')">delete</mat-chip>
     </mat-chip-set>
   </mat-card-footer>
 </mat-card>
