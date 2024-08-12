@@ -31,7 +31,8 @@ export class ItemCardComponent implements OnInit {
     };
 
     this.newItem.emit(item);
-    console.log({item});
+    console.log({ item });
+    this.setupInitialFakeForm();
   }
 
   private setupInitialForm() {

@@ -150,7 +150,9 @@
       <app-item [itemAdded]="itemAdded" ></app-item>
       <app-item-card (newItem)="itemAdded = $event" ></app-item-card>
       <div class="invoice-form-buttons">
+        <!-- TODO: create Fn for discard element -->
         <button class="button-edit">Discard</button>
+        <!-- TODO: save on local storage for saving as draft -->
         <button class="button-draft button-m-vnt">Save as Draft</button>
         <button type="submit" class="button-invoice button-m">
           Save & Send

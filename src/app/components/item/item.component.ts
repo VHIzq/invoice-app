@@ -32,6 +32,11 @@ export class ItemComponent implements OnChanges {
     },
   ];
 
+  onEditingCard() {
+    //* TODO: create flow to update a card into a form:
+    //* delete current card on editing and send data to form
+  }
+
   calculateTotalPerItem(item: ItemCard): number {
     return Number(item.quantity) * Number(item.price);
   }
@@ -48,9 +53,9 @@ export class ItemComponent implements OnChanges {
     });
 
     dialogRef.afterClosed().subscribe((confirmDelete) => {
-      if (confirmDelete?.reason === 'deleteAction') {
+      const isDeleteAction = confirmDelete?.reason === 'deleteAction';
+      if (isDeleteAction) {
         this.deleteItem(itemId);
-        console.log('list after delete', this.itemList);
       }
     });
   }
