@@ -1,7 +1,7 @@
 export interface ItemCard {
-  itemName: string;
-  quantity: string;
-  price: string;
+  itemName?: string;
+  quantity?: string;
+  price?: string;
   total?: string;
   itemId?: string;
 }

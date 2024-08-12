@@ -15,4 +15,5 @@ export interface InvoiceFormModel {
     quantity: string;
     price: string;
     total: string;
+    itemId: string;
   }

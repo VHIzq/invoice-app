@@ -1,27 +1,26 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { ItemCard } from '../../models/item-card.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogItemComponent } from '../delete-dialog-item/delete-dialog-item.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-item',
   standalone: true,
-  imports: [MatCardModule, MatChipsModule],
+  imports: [MatCardModule, MatChipsModule, CommonModule],
   templateUrl: './item.component.html',
   styleUrl: './item.component.scss',
 })
-export class ItemComponent {
-  
+export class ItemComponent implements OnChanges {
   @Input()
-  itemAdded?: any;
-  
+  itemAdded!: ItemCard;
+
   constructor(private dialog: MatDialog) {}
 
-  deleteItem(idItem: string) {
-    console.log('item deleted,', idItem);
-    this.itemList = this.itemList.filter((item) => item.itemId !== idItem);
+  ngOnChanges(changes: SimpleChanges): void {
+    this.addNewItem();
   }
 
   itemList: Array<ItemCard> = [
@@ -30,12 +29,6 @@ export class ItemComponent {
       itemName: 'Shoes',
       quantity: '2',
       price: '240',
-    },
-    {
-      itemId: '2356',
-      itemName: 'Milk',
-      quantity: '4',
-      price: '20',
     },
   ];
 
@@ -60,5 +53,15 @@ export class ItemComponent {
         console.log('list after delete', this.itemList);
       }
     });
+  }
+
+  private deleteItem(idItem: string) {
+    this.itemList = this.itemList.filter((item) => item.itemId !== idItem);
+  }
+
+  private addNewItem() {
+    if (this.itemAdded) {
+      this.itemList.push(this.itemAdded);
+    }
   }
 }

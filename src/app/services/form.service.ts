@@ -27,6 +27,7 @@ export class FormService {
       quantity: ['', Validators.required],
       price: ['', Validators.required],
       total: ['', Validators.required],
+      itemId: ['', Validators.required],
     })
   }
 }
