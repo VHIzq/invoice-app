@@ -1,4 +1,11 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { ItemCard } from '../../models/item-card.model';
@@ -17,6 +24,9 @@ export class ItemComponent implements OnChanges {
   @Input()
   itemAdded!: ItemCard;
 
+  @Output()
+  onEditingItem = new EventEmitter<ItemCard>();
+
   constructor(private dialog: MatDialog) {}
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -32,9 +42,16 @@ export class ItemComponent implements OnChanges {
     },
   ];
 
-  onEditingCard() {
-    //* TODO: create flow to update a card into a form:
-    //* delete current card on editing and send data to form
+  editingItem = {
+    itemId: '2324',
+    itemName: 'Shoes',
+    quantity: '2',
+    price: '240',
+  };
+
+  handleEditingItem(itemId: string) {
+    this.deleteItem(itemId);
+    this.onEditingCard();
   }
 
   calculateTotalPerItem(item: ItemCard): number {
@@ -58,6 +75,13 @@ export class ItemComponent implements OnChanges {
         this.deleteItem(itemId);
       }
     });
+  }
+
+  private onEditingCard() {
+    if (this.itemAdded) {
+      this.onEditingItem.emit(this.itemAdded);
+      console.log(this.itemAdded);
+    }
   }
 
   private deleteItem(idItem: string) {

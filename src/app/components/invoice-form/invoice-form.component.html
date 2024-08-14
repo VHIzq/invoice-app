@@ -147,8 +147,8 @@
         />
       </mat-form-field>
       <span class="form-container__item-list">Item List</span>
-      <app-item [itemAdded]="itemAdded" ></app-item>
-      <app-item-card (newItem)="itemAdded = $event" ></app-item-card>
+      <app-item [itemAdded]="itemAdded" (onEditingItem)="onEditingItem = $event" ></app-item>
+      <app-item-card  (newItem)="itemAdded = $event" [onEditingItem]="onEditingItem" ></app-item-card>
       <div class="invoice-form-buttons">
         <!-- TODO: create Fn for discard element -->
         <button class="button-edit">Discard</button>

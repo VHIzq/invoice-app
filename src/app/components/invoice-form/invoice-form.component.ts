@@ -36,9 +36,8 @@ import { ItemComponent } from '../item/item.component';
 export class InvoiceFormComponent implements OnInit {
   titleForm?: string;
   formInvoice!: FormGroup;
-
-  itemAdded?: any;
-
+  itemAdded!: ItemCard;
+  onEditingItem?: ItemCard;
 
   itemList: Array<ItemCard> = [
     {
