@@ -14,6 +14,7 @@ import { ItemCardComponent } from '../item-card/item-card.component';
 import { CommonModule } from '@angular/common';
 import { ItemCard } from '../../models/item-card.model';
 import { ItemComponent } from '../item/item.component';
+import { PersistencyService } from '../../services/persistency.service';
 
 @Component({
   selector: 'app-invoice-form',
@@ -52,7 +53,8 @@ export class InvoiceFormComponent implements OnInit {
 
   constructor(
     private formService: FormService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private persistencyService: PersistencyService
   ) {}
 
   ngOnInit(): void {
@@ -62,6 +64,81 @@ export class InvoiceFormComponent implements OnInit {
 
   handleSubmit() {
     console.log('submit');
+  }
+
+  handleSaveAsDraft() {
+    this.persistencyService.setItem(
+      'cityFrom',
+      this.formInvoice.controls['cityFrom'].value
+    );
+    this.persistencyService.setItem(
+      'streetAddressFrom',
+      this.formInvoice.controls['streetAddressFrom'].value
+    );
+    this.persistencyService.setItem(
+      'postCodeFrom',
+      this.formInvoice.controls['postCodeFrom'].value
+    );
+    this.persistencyService.setItem(
+      'countryFrom',
+      this.formInvoice.controls['countryFrom'].value
+    );
+    this.persistencyService.setItem(
+      'clientNameTo',
+      this.formInvoice.controls['clientNameTo'].value
+    );
+    this.persistencyService.setItem(
+      'clientEmailTo',
+      this.formInvoice.controls['clientEmailTo'].value
+    );
+    this.persistencyService.setItem(
+      'streetAddressTo',
+      this.formInvoice.controls['streetAddressTo'].value
+    );
+    this.persistencyService.setItem(
+      'cityTo',
+      this.formInvoice.controls['cityTo'].value
+    );
+    this.persistencyService.setItem(
+      'postCodeTo',
+      this.formInvoice.controls['postCodeTo'].value
+    );
+    this.persistencyService.setItem(
+      'countryTo',
+      this.formInvoice.controls['countryTo'].value
+    );
+    this.persistencyService.setItem(
+      'invoiceDate',
+      this.formInvoice.controls['invoiceDate'].value
+    );
+    this.persistencyService.setItem(
+      'paymentTerms',
+      this.formInvoice.controls['paymentTerms'].value
+    );
+    this.persistencyService.setItem(
+      'projectDescription',
+      this.formInvoice.controls['projectDescription'].value
+    );
+    this.persistencyService.setItem(
+      'itemName',
+      this.formInvoice.controls['itemName'].value
+    );
+    this.persistencyService.setItem(
+      'quantity',
+      this.formInvoice.controls['quantity'].value
+    );
+    this.persistencyService.setItem(
+      'price',
+      this.formInvoice.controls['price'].value
+    );
+    this.persistencyService.setItem(
+      'total',
+      this.formInvoice.controls['total'].value
+    );
+    this.persistencyService.setItem(
+      'itemId',
+      this.formInvoice.controls['itemId'].value
+    );
   }
 
   private setupInitialForm() {
