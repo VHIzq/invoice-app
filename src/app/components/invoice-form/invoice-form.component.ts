@@ -67,10 +67,15 @@ export class InvoiceFormComponent implements OnInit {
   }
 
   handleSaveAsDraft() {
+    //TODO: if is a pending invoice, must to retrieve data from local storage
     const controlKeys = Object.keys(this.formInvoice.controls);
     controlKeys.forEach((field) => {
       this.persistencyService.setItem(field, this.formInvoice.controls[field].value);
     });
+  }
+
+  saveAndSend() {
+    console.log('put request to API');
   }
 
   private setupInitialForm() {
