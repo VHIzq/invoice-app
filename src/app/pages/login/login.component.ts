@@ -25,6 +25,10 @@ export class LoginComponent implements OnInit {
     this.setupLoginForm();
   }
 
+  handleLogin() {
+    console.log('login user');
+  }
+
   private setupLoginForm() {
     this.formLogin = this.formService.createLoginForm();
   }
