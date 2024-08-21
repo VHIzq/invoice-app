@@ -3,12 +3,17 @@ import { HomeComponent } from './components/home/home.component';
 import { InvoiceFormComponent } from './components/invoice-form/invoice-form.component';
 import { StatusInvoiceComponent } from './components/status-invoice/status-invoice.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
     title: 'Login'
+  },{
+    path: 'sign-up',
+    component: SignUpComponent,
+    title: 'Sign Up'
   },
   {
     path: 'home',

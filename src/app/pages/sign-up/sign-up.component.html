@@ -1,1 +1,84 @@
-<p>sign-up works!</p>
+<div class="container">
+  <form action="put" [formGroup]="formSignUp">
+    <mat-form-field class="form-container__field">
+      <mat-label>Name</mat-label>
+      <input
+        class="form-container__input"
+        formControlName="firstName"
+        matInput
+        placeholder="first name"
+        value=""
+      />
+    </mat-form-field>
+    <mat-form-field class="form-container__field">
+      <mat-label> First last name</mat-label>
+      <input
+        class="form-container__input"
+        formControlName="firstLastName"
+        matInput
+        placeholder="first last name"
+        value=""
+      />
+    </mat-form-field>
+    <mat-form-field class="form-container__field">
+      <mat-label>Second Last Name</mat-label>
+      <input
+        class="form-container__input"
+        formControlName="secondLastName"
+        matInput
+        placeholder="second last name"
+        value=""
+      />
+    </mat-form-field>
+    <mat-form-field class="form-container__field">
+      <mat-label>Birthdate</mat-label>
+      <input
+        class="form-container__input"
+        formControlName="birthdate"
+        matInput
+        placeholder="birthdate"
+        value=""
+      />
+    </mat-form-field>
+    <mat-form-field class="form-container__field">
+      <mat-label>RFC</mat-label>
+      <input
+        class="form-container__input"
+        formControlName="rfc"
+        matInput
+        placeholder="rfc"
+        value=""
+      />
+    </mat-form-field>
+    <mat-form-field class="form-container__field">
+      <mat-label>Email</mat-label>
+      <input
+        class="form-container__input"
+        formControlName="email"
+        matInput
+        placeholder="your@email.com"
+        value=""
+      />
+    </mat-form-field>
+    <mat-form-field class="form-container__field">
+      <mat-label>Password</mat-label>
+      <input
+        class="form-container__input"
+        formControlName="password"
+        matInput
+        placeholder="length min 8 chars and max 20 chars"
+        value=""
+      />
+    </mat-form-field>
+    <mat-form-field class="form-container__field">
+      <mat-label>Confirm Password</mat-label>
+      <input
+        class="form-container__input"
+        formControlName="confirmPassword"
+        matInput
+        placeholder="confirm your password"
+        value=""
+      />
+    </mat-form-field>
+  </form>
+</div>

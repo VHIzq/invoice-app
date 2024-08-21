@@ -15,5 +15,4 @@ export class StatusButtonComponent {
   invoice!: InvoiceModel;
 
   url = 'status-invoice';
-  
 }

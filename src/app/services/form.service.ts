@@ -37,4 +37,17 @@ export class FormService {
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]]
     });
   }
+
+  createSignUpForm() {
+    return this.fb.group({
+      firstName: ['', Validators.required],
+      firstLastName: ['', Validators.required],
+      secondLastName: ['', Validators.required],
+      birthdate: ['', [Validators.required]],
+      rfc: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]] 
+    })    
+  }
 }
