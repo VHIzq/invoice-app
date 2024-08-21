@@ -1,1 +1,41 @@
-<p>login works!</p>
+<div class="container">
+  <div class="logo-bg">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="26">
+      <path
+        fill="#FFF"
+        fill-rule="evenodd"
+        d="M20.513 0C24.965 2.309 28 6.91 28 12.21 28 19.826 21.732 26 14 26S0 19.826 0 12.21C0 6.91 3.035 2.309 7.487 0L14 12.9z"
+      />
+    </svg>
+  </div>
+
+  <h2 class="space-up space-down">Bienvenido</h2>
+
+  <form action="" [formGroup]="formLogin" class="container__form">
+    <mat-form-field class="form-container__field">
+      <mat-label>email</mat-label>
+      <input
+        class="form-container__input"
+        formControlName="email"
+        matInput
+        placeholder="user@email.com"
+        value=""
+      />
+    </mat-form-field>
+    <mat-form-field class="form-container__field">
+      <mat-label>password</mat-label>
+      <input
+        class="form-container__input"
+        formControlName="password"
+        matInput
+        placeholder="min length 8 chars to max 20 chars"
+        value=""
+      />
+    </mat-form-field>
+    <button type="submit" class="button-invoice button-m space-up">
+      Login
+    </button>
+    <span class="space-up space-down">Forgot password?</span>
+    <span class="space-up">Dont hace an account? <a routerLink="/" ><strong>Sign Up</strong></a></span>
+  </form>
+</div>

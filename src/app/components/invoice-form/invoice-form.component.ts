@@ -21,6 +21,7 @@ import { PersistencyService } from '../../services/persistency.service';
   standalone: true,
   providers: [provideNativeDateAdapter()],
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     MatInputModule,
     MatDatepickerModule,
@@ -28,7 +29,6 @@ import { PersistencyService } from '../../services/persistency.service';
     FooterActionsComponent,
     BackAnchorComponent,
     ItemCardComponent,
-    CommonModule,
     ItemComponent,
   ],
   templateUrl: './invoice-form.component.html',

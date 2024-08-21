@@ -30,4 +30,11 @@ export class FormService {
       itemId: ['', Validators.required],
     })
   }
+
+  createLoginForm() {
+    return this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]]
+    });
+  }
 }

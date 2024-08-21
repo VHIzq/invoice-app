@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { InvoiceFormComponent } from './components/invoice-form/invoice-form.component';
-import { InvoiceComponent } from './components/invoice/invoice.component';
 import { StatusInvoiceComponent } from './components/status-invoice/status-invoice.component';
 import { LoginComponent } from './pages/login/login.component';
 
