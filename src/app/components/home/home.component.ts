@@ -24,6 +24,7 @@ export class HomeComponent {
   constructor(private invoiceService: InvoiceService) {}
   ngOnInit(): void {
     this.setupMockData();
+    this.setupInitialInvoices();
   }
 
   setupMockData() {
@@ -32,5 +33,10 @@ export class HomeComponent {
       .subscribe((invoices: Array<InvoiceModel>) => {
         this.mockData = invoices;
       });
+  }
+
+  setupInitialInvoices() {
+    this.invoiceService.getInvoiceData()
+    .subscribe((invoice) => console.log(invoice));
   }
 }
