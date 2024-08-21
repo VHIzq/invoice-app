@@ -34,13 +34,11 @@
     </mat-form-field>
     <mat-form-field class="form-container__field">
       <mat-label>Birthdate</mat-label>
-      <input
-        class="form-container__input"
-        formControlName="birthdate"
-        matInput
-        placeholder="birthdate"
-        value=""
-      />
+      <input formControlName="birthdate" matInput [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+
     </mat-form-field>
     <mat-form-field class="form-container__field">
       <mat-label>RFC</mat-label>
@@ -83,7 +81,7 @@
       />
     </mat-form-field>
 
-    <button type="submit" class="button-invoice button-m space-up">
+    <button type="submit" class="button-invoice button-m space-up space-down">
       Sign Up
     </button>
   </form>
