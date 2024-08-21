@@ -1,6 +1,8 @@
 <div class="container">
-  <form action="put" [formGroup]="formSignUp">
-    <mat-form-field class="form-container__field">
+  <form action="put" [formGroup]="formSignUp" class="form-container">
+    <h2>Sign Up</h2>
+    <h4 class="space-up">Create your account</h4>
+    <mat-form-field class="form-container__field space-up">
       <mat-label>Name</mat-label>
       <input
         class="form-container__input"
@@ -80,5 +82,9 @@
         value=""
       />
     </mat-form-field>
+
+    <button type="submit" class="button-invoice button-m space-up">
+      Sign Up
+    </button>
   </form>
 </div>
