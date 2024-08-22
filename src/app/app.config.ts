@@ -4,7 +4,10 @@ import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
 import { provideNativeDateAdapter } from '@angular/material/core';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { initializeApp } from 'firebase/app';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBl7o_11fB3i_3ND6u6_rqcmUve8n-IE_Q",
@@ -16,6 +19,8 @@ const firebaseConfig = {
   appId: "1:198875110568:web:cea6fa7d16c32ca7b9b69d"
 };
 
+initializeApp(firebaseConfig);
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
@@ -24,7 +29,8 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideNativeDateAdapter(),
     importProvidersFrom([
-      //provideFirebaseApp(() => initializeApp(firebaseConfig)),
+      AngularFireModule.initializeApp(firebaseConfig),
+      AngularFirestoreModule,
     ])
   ],
 };
