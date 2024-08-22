@@ -1,17 +1,16 @@
-<div class="container">
-  <div class="logo-bg">
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="26">
-      <path
-        fill="#FFF"
-        fill-rule="evenodd"
-        d="M20.513 0C24.965 2.309 28 6.91 28 12.21 28 19.826 21.732 26 14 26S0 19.826 0 12.21C0 6.91 3.035 2.309 7.487 0L14 12.9z"
-      />
-    </svg>
-  </div>
-
-  <h2 class="space-up space-down">Welcome</h2>
-
-  <form action="" [formGroup]="formLogin" class="container__form space-up">
+<div class="container"> 
+  <form action="" [formGroup]="formLogin" class="form-container">
+    <div class="logo-bg space-up">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="26">
+        <path
+          fill="#FFF"
+          fill-rule="evenodd"
+          d="M20.513 0C24.965 2.309 28 6.91 28 12.21 28 19.826 21.732 26 14 26S0 19.826 0 12.21C0 6.91 3.035 2.309 7.487 0L14 12.9z"
+        />
+      </svg>
+    </div>
+  
+    <h2 class="space-up space-down">Welcome</h2>
     <mat-form-field class="form-container__field">
       <mat-label>email</mat-label>
       <input
@@ -39,7 +38,7 @@
 
     <span class="space-up"
       >Dont have an account?
-      <span [routerLink]="url" ><strong>Sign Up</strong></span></span
+      <span [routerLink]="url"><strong>Sign Up</strong></span></span
     >
   </form>
 </div>
