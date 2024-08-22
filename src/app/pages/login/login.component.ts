@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormService } from '../../services/form.service';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
+import { UserModel } from '../../services/auth/auth.service.model';
 
 @Component({
   selector: 'app-login',
@@ -24,24 +25,34 @@ export class LoginComponent implements OnInit {
   url = 'sign-up';
   formLogin!: FormGroup;
 
-  constructor(private formService: FormService, firebaseService: AuthService) {}
+  constructor(
+    private formService: FormService,
+    private authService: AuthService
+  ) {}
   ngOnInit(): void {
     this.setupLoginForm();
   }
 
-  handleLogin() {
+  handlerLogin() {
     console.log('login user');
+    this.login()
+    this.resetFormLogin();
   }
 
-  async login() {
-    console.log(this.formLogin.value);
-    return;
+   async login() {
     if (this.formLogin.valid) {
-      
-    }
+      const user = this.formLogin.value as UserModel;
+      this.authService.signIn(user)
+      .then((resp) => console.log('__', resp))
   }
+}
 
   private setupLoginForm() {
     this.formLogin = this.formService.createLoginForm();
+  }
+
+  private resetFormLogin() {
+    this.formLogin.controls['email'].reset('');
+    this.formLogin.controls['password'].reset('');
   }
 }

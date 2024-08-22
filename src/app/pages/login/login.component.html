@@ -1,5 +1,10 @@
-<div class="container"> 
-  <form action="" [formGroup]="formLogin" class="form-container">
+<div class="container">
+  <form
+    action="post"
+    (ngSubmit)="handlerLogin()"
+    [formGroup]="formLogin"
+    class="form-container"
+  >
     <div class="logo-bg space-up">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="26">
         <path
@@ -9,7 +14,7 @@
         />
       </svg>
     </div>
-  
+
     <h2 class="space-up space-down">Welcome</h2>
     <mat-form-field class="form-container__field">
       <mat-label>email</mat-label>
@@ -23,6 +28,7 @@
     </mat-form-field>
     <mat-form-field class="form-container__field">
       <mat-label>password</mat-label>
+      <!-- TODO: hide passwords when typing it -->
       <input
         class="form-container__input"
         formControlName="password"
