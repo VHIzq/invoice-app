@@ -5,6 +5,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { AuthService } from '../../services/auth/auth.service';
+import { UserModel } from '../../services/auth/auth.service.model';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +16,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatDatepickerModule
+    MatDatepickerModule,
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
@@ -22,10 +24,19 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 export class SignUpComponent implements OnInit {
   formSignUp!: FormGroup;
 
-  constructor(private formService: FormService) {}
+  constructor(
+    private formService: FormService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.setupSignUpForm();
+  }
+
+  handlerSignUp() {
+    const user = this.formSignUp.value as UserModel;
+    this.authService.signUp(user)
+    .subscribe((response) => console.log(response));
   }
 
   private setupSignUpForm() {
@@ -33,5 +44,5 @@ export class SignUpComponent implements OnInit {
   }
 }
 
-
+//TODO: double check passwords matches
 /* https://blog.bitsrc.io/implementing-confirm-password-validation-in-angular-with-custom-validators-6acd01cb0288 */

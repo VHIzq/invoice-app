@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
   }
 
   handlerLogin() {
-    console.log('login user');
     this.login()
     this.resetFormLogin();
   }
@@ -43,7 +42,7 @@ export class LoginComponent implements OnInit {
     if (this.formLogin.valid) {
       const user = this.formLogin.value as UserModel;
       this.authService.signIn(user)
-      .then((resp) => console.log('__', resp))
+      .subscribe((resp) => console.log(resp));
   }
 }
 

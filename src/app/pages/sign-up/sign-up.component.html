@@ -1,8 +1,8 @@
 <div class="container">
-  <form action="put" [formGroup]="formSignUp" class="form-container">
+  <form action="put" [formGroup]="formSignUp" (ngSubmit)="handlerSignUp()" class="form-container">
     <h2 class="space-up">Sign Up</h2>
     <h4 class="space-up">Create your account</h4>
-    <mat-form-field class="form-container__field space-up">
+    <!-- <mat-form-field class="form-container__field space-up">
       <mat-label>Name</mat-label>
       <input
         class="form-container__input"
@@ -49,7 +49,7 @@
         placeholder="rfc"
         value=""
       />
-    </mat-form-field>
+    </mat-form-field> -->
     <mat-form-field class="form-container__field">
       <mat-label>Email</mat-label>
       <input

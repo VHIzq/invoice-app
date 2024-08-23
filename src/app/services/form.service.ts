@@ -46,7 +46,7 @@ export class FormService {
 
   createSignUpForm() {
     return this.fb.group({
-      firstName: ['', Validators.required],
+      /* firstName: ['', Validators.required],
       firstLastName: ['', Validators.required],
       secondLastName: ['', Validators.required],
       birthdate: ['', [Validators.required]],
@@ -55,7 +55,7 @@ export class FormService {
         Validators.required,
         Validators.maxLength(13),
         Validators.minLength(13),
-      ],
+      ], */
       email: ['', [Validators.required, Validators.email]],
       password: [
         '',

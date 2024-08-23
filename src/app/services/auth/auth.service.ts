@@ -8,8 +8,10 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   sendPasswordResetEmail,
+  UserCredential,
 } from 'firebase/auth';
 import { UserModel } from './auth.service.model';
+import { from, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,25 +21,35 @@ export class AuthService {
   firestore = inject(AngularFirestore);
   router = inject(Router);
 
-  // Suggested code may be subject to a license. Learn more: ~LicenseLog:1135489669.
   getAuth() {
     return getAuth();
   }
 
-  signIn(user: UserModel) {
-    return signInWithEmailAndPassword(getAuth(), user.email, user.password);
+  signIn(user: UserModel): Observable<UserCredential> {
+    const promise = signInWithEmailAndPassword(
+      getAuth(),
+      user.email,
+      user.password
+    );
+    return from(promise);
   }
 
-  signUp(user: UserModel) {
-    return createUserWithEmailAndPassword(getAuth(), user.email, user.password);
+  signUp(user: UserModel): Observable<UserCredential> {
+    const promise = createUserWithEmailAndPassword(
+      getAuth(),
+      user.email,
+      user.password
+    );
+    return from(promise);
   }
 
-  // updateUser(displayName: any) {
-  //   return updateProfile(getAuth().currentUser, { displayName });
-  // }
+  /* updateUser(displayName: any) {
+    const promise = updateProfile(getAuth().currentUser, { displayName });
+    return from(promise);
+  } */
 
   resetPassword(email: string) {
-    return sendPasswordResetEmail(getAuth(), email)
+    const promise = sendPasswordResetEmail(getAuth(), email);
+    return from(promise);
   }
-  
 }
