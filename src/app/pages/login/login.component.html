@@ -32,6 +32,7 @@
       <input
         class="form-container__input"
         formControlName="password"
+        type="password"
         matInput
         placeholder="min length 8 chars to max 20 chars"
         value=""
@@ -41,7 +42,9 @@
       Login
     </button>
     <span class="space-up space-down"><small>Forgot password?</small></span>
-
+    @if (errorMessage) {
+      <mat-label> {{ errorMessage }} </mat-label>
+    }
     <span class="space-up"
       >Dont have an account?
       <span [routerLink]="url"><strong>Sign Up</strong></span></span
