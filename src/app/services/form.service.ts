@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormValidators } from '../shared/utilities/form.validators';
 
 @Injectable({
   providedIn: 'root',
@@ -72,6 +73,7 @@ export class FormService {
           Validators.minLength(8),
           Validators.maxLength(20),
         ],
+        { validators: FormValidators.confirmPassword }
       ],
     });
   }
