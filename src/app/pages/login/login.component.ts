@@ -18,7 +18,7 @@ import { ErrorMessageFriendlyPipe } from './pipes/error-message-friendly.pipe';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    ErrorMessageFriendlyPipe
+    ErrorMessageFriendlyPipe,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -33,29 +33,30 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router
   ) {}
+
   ngOnInit(): void {
     this.setupLoginForm();
   }
 
   handlerLogin() {
-    this.login()
+    this.login();
     this.resetFormLogin();
   }
 
-   async login() {
-    if (this.formLogin.valid) {
+  async login() {
+    const isValidForm = this.formLogin.valid;
+    if (isValidForm) {
       const user = this.formLogin.value as UserModel;
-      this.authService.signIn(user)
-      .subscribe({
+      this.authService.signIn(user).subscribe({
         next: () => {
-          this.router.navigateByUrl('home')
+          this.router.navigateByUrl('home');
         },
-        error: (err)  => {
+        error: (err) => {
           this.errorMessage = err.code;
         },
       });
+    }
   }
-}
 
   private setupLoginForm() {
     this.formLogin = this.formService.createLoginForm();
