@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormService } from '../../services/form.service';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { CommonModule } from '@angular/common';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AuthService } from '../../services/auth/auth.service';
 import { UserModel } from '../../services/auth/auth.service.model';
-import { Router } from '@angular/router';
 import { ErrorMessageFriendlyPipe } from '../login/pipes/error-message-friendly.pipe';
 
 @Component({
@@ -60,6 +60,3 @@ export class SignUpComponent implements OnInit {
     this.formSignUp = this.formService.createSignUpForm();
   }
 }
-
-//TODO: double check passwords matches
-/* https://blog.bitsrc.io/implementing-confirm-password-validation-in-angular-with-custom-validators-6acd01cb0288 */
