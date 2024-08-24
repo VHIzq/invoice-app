@@ -3,6 +3,10 @@
 
 .container {
   @include mixins.configMobileDisplay();
+
+  .error-message{
+    color: stgs.$red-400;
+  }
 }
 
 .form-container {

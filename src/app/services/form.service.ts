@@ -46,36 +46,27 @@ export class FormService {
   }
 
   createSignUpForm() {
-    return this.fb.group({
-      /* firstName: ['', Validators.required],
-      firstLastName: ['', Validators.required],
-      secondLastName: ['', Validators.required],
-      birthdate: ['', [Validators.required]],
-      rfc: [
-        '',
-        Validators.required,
-        Validators.maxLength(13),
-        Validators.minLength(13),
-      ], */
-      email: ['', [Validators.required, Validators.email]],
-      password: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(8),
-          Validators.maxLength(20),
+    return this.fb.group(
+      {
+        email: ['', [Validators.required, Validators.email]],
+        password: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(8),
+            Validators.maxLength(20),
+          ],
         ],
-      ],
-      confirmPassword: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(8),
-          Validators.maxLength(20),
+        confirmPassword: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(8),
+            Validators.maxLength(20),
+          ],
         ],
-        { validators: FormValidators.confirmPassword }
-      ],
-    });
+      },
+      { validators: FormValidators.passwordsMatch('password', 'confirmPassword') }
+    );
   }
 }
-//TODO: validate confirm matching passwords

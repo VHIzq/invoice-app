@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AuthService } from '../../services/auth/auth.service';
 import { UserModel } from '../../services/auth/auth.service.model';
+import { Router } from '@angular/router';
+import { ErrorMessageFriendlyPipe } from '../login/pipes/error-message-friendly.pipe';
 
 @Component({
   selector: 'app-sign-up',
@@ -17,16 +19,19 @@ import { UserModel } from '../../services/auth/auth.service.model';
     MatInputModule,
     MatButtonModule,
     MatDatepickerModule,
+    ErrorMessageFriendlyPipe,
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
 })
 export class SignUpComponent implements OnInit {
   formSignUp!: FormGroup;
+  errorMessage: string | null = null;
 
   constructor(
     private formService: FormService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -34,9 +39,21 @@ export class SignUpComponent implements OnInit {
   }
 
   handlerSignUp() {
+    this.signUp();
+  }
+  
+  signUp() {
     const user = this.formSignUp.value as UserModel;
     this.authService.signUp(user)
-    .subscribe((response) => console.log(response));
+    .subscribe({
+      next: () => {
+        this.router.navigateByUrl('home');
+      },
+      error: (err) => {
+        this.errorMessage = err.code;
+      },
+    });
+    
   }
 
   private setupSignUpForm() {

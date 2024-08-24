@@ -1,7 +1,12 @@
 <div class="container">
-  <form action="put" [formGroup]="formSignUp" (ngSubmit)="handlerSignUp()" class="form-container">
+  <form
+    action="put"
+    [formGroup]="formSignUp"
+    (ngSubmit)="handlerSignUp()"
+    class="form-container"
+  >
     <h2 class="space-up">Sign Up</h2>
-    <h4 class="space-up">Create your account</h4>
+    <h4 class="space-up space-down">Create your account</h4>
     <!-- <mat-form-field class="form-container__field space-up">
       <mat-label>Name</mat-label>
       <input
@@ -83,7 +88,16 @@
       />
     </mat-form-field>
 
-    <button [disabled]="" type="submit" class="button-invoice button-m space-up space-down">
+    @if (errorMessage) {
+    <mat-label class="error-message">
+      {{ errorMessage | appErrorMessageFriendly }}
+    </mat-label>
+    }
+    <button
+      [disabled]="!formSignUp.valid"
+      type="submit"
+      class="button-invoice button-m space-up space-down"
+    >
       Sign Up
     </button>
   </form>

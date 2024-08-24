@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { CommonModule } from '@angular/common';
-import { HeadbarComponent } from './shared/headbar/headbar.component';
 import { HomeComponent } from './components/home/home.component';
 
 @Component({
