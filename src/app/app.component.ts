@@ -11,8 +11,6 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     CommonModule,
     RouterOutlet,
-    SidenavComponent,
-    HeadbarComponent,
     HomeComponent,
   ],
   templateUrl: './app.component.html',

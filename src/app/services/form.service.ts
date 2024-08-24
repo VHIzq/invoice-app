@@ -33,9 +33,9 @@ export class FormService {
 
   createLoginForm() {
     return this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['usertest@demo.com', [Validators.required, Validators.email]],
       password: [
-        '',
+        '348ce893h92',
         [
           Validators.required,
           Validators.minLength(8),
