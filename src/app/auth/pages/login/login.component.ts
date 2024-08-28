@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { FormService } from '../../services/form.service';
+import { FormService } from '../../../services/form.service';
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from '../../services/auth/auth.service';
-import { UserModel } from '../../services/auth/auth.service.model';
 import { ErrorMessageFriendlyPipe } from './pipes/error-message-friendly.pipe';
+import { UserModel } from '../../services/auth.service.model';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -24,15 +24,13 @@ import { ErrorMessageFriendlyPipe } from './pipes/error-message-friendly.pipe';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
-  url = 'sign-up';
+  url = 'auth/sign-up';
   formLogin!: FormGroup;
   errorMessage: string | null = null;
 
-  constructor(
-    private formService: FormService,
-    private authService: AuthService,
-    private router: Router
-  ) {}
+  private formService = inject(FormService);
+  private authService =  inject(AuthService);
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.setupLoginForm();

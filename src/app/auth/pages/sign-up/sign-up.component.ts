@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormService } from '../../services/form.service';
+import { FormService } from '../../../services/form.service';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { AuthService } from '../../services/auth/auth.service';
-import { UserModel } from '../../services/auth/auth.service.model';
 import { ErrorMessageFriendlyPipe } from '../login/pipes/error-message-friendly.pipe';
+import { AuthService } from '../../services/auth.service';
+import { UserModel } from '../../services/auth.service.model';
 
 @Component({
   selector: 'app-sign-up',

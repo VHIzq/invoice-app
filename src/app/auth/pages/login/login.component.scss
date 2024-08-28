@@ -1,5 +1,5 @@
-@use "../../utilities/mixins" as mixins;
-@use "../../utilities/settings" as stgs;
+@use "../../../utilities/mixins" as mixins;
+@use "../../../utilities/settings" as stgs;
 
 .container {
   @include mixins.configMobileDisplay();

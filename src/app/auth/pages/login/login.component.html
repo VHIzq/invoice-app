@@ -1,9 +1,9 @@
 <div class="container">
   <form
     action="post"
+    class="form-container"
     (ngSubmit)="handlerLogin()"
     [formGroup]="formLogin"
-    class="form-container"
   >
     <div class="logo-bg space-up">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="26">
@@ -37,12 +37,18 @@
         value=""
       />
     </mat-form-field>
-    <button type="submit" class="button-invoice button-m space-up">
+    <button
+      type="submit"
+      class="button-invoice button-m space-up"
+      [disabled]="formLogin.invalid"
+    >
       Login
     </button>
     <span class="space-up space-down"><small>Forgot password?</small></span>
     @if (errorMessage) {
-    <mat-label class="error-message" > {{ errorMessage | appErrorMessageFriendly }} </mat-label>
+    <mat-label class="error-message">
+      {{ errorMessage | appErrorMessageFriendly }}
+    </mat-label>
     }
     <span class="space-up"
       >Dont have an account?

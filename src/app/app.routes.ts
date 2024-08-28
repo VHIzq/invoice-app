@@ -2,25 +2,16 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { InvoiceFormComponent } from './components/invoice-form/invoice-form.component';
 import { StatusInvoiceComponent } from './components/status-invoice/status-invoice.component';
-import { LoginComponent } from './pages/login/login.component';
-import { SignUpComponent } from './pages/sign-up/sign-up.component';
-import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
-    path: '',
-    component: LoginComponent,
-    title: 'Login'
-  },{
-    path: 'sign-up',
-    component: SignUpComponent,
-    title: 'Sign Up'
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: 'home',
     component: HomeComponent,
     title: 'Invoices',
-    canActivate: [authGuard]
   },
   {
     path: 'create-invoice',
@@ -42,6 +33,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'auth'
   }
 ];
