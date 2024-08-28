@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class NewInvoiceComponent {
   constructor(private router: Router) {}
   handleNavigation() {
-    console.log('here');
-    this.router.navigate(['create-invoice']);
+    this.router.navigate(['invoices/create-invoice']);
   }
 }

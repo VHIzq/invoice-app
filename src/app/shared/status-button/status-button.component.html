@@ -1,5 +1,5 @@
 <button
-  [routerLink]="url"
+  (click)="handleNavigation()"
   class="status-code"
   [ngClass]="{
       'is-paid': invoice.status === 'paid',

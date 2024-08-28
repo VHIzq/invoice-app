@@ -48,6 +48,6 @@ export class StatusInvoiceComponent {
   }
 
   handleNavigation() {
-    this.router.navigate(['edit-invoice']);
+    this.router.navigate(['invoices/edit-invoice']);
   }
 }

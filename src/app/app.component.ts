@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { AuthModule } from './auth/auth.module';
+import { PagesModule } from './pages/pages.module';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { AuthModule } from './auth/auth.module';
     CommonModule,
     RouterOutlet,
     HomeComponent,
-    AuthModule
+    AuthModule,
+    PagesModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

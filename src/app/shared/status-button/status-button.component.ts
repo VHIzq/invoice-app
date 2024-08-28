@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject, Input } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { InvoiceModel } from '../../components/invoice/invoice.model';
 
 @Component({
@@ -14,5 +14,9 @@ export class StatusButtonComponent {
   @Input()
   invoice!: InvoiceModel;
 
-  url = 'status-invoice';
+  private router = inject(Router);
+
+  handleNavigation(){
+    this.router.navigate(['invoices/status-invoice']);
+  }
 }
