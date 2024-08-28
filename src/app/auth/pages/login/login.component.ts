@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       const user = this.formLogin.value as UserModel;
       this.authService.signIn(user).subscribe({
         next: () => {
-          this.router.navigateByUrl('home');
+          this.router.navigateByUrl('invoices/home');
         },
         error: (err) => {
           this.errorMessage = err.code;
