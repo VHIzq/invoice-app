@@ -1,7 +1,18 @@
 @use '../../utilities/settings' as stgs;
 
-.back-anchor {
-    color: stgs.$white-400;
+.back {
     display: inline-block;
     margin: 10px 0;
+
+    &__icon {
+      margin-right: 5px;
+    }
+    
+    &__button {
+      background-color: transparent;
+      color: stgs.$white-400;
+      border: none;
+      outline: none;
+    }
   }
+  
