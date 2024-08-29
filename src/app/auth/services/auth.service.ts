@@ -9,8 +9,9 @@ import {
   UserCredential,
 } from 'firebase/auth';
 import { UserSignUp, UserSignIn } from './auth.service.model';
-import { from, map, Observable, tap } from 'rxjs';
+import { from, map, Observable, of, tap } from 'rxjs';
 import { AuthStatus } from './enums/auth-status.enum';
+import { HttpHandler, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -60,8 +61,18 @@ export class AuthService {
     return from(promise);
   } */
 
+    //TODO: add recovery password
   resetPassword(email: string) {
     const promise = sendPasswordResetEmail(getAuth(), email);
     return from(promise);
+  }
+    //TODO: persistencu on sessions
+  checkAuthStatus(): Observable<boolean> {
+    const token = sessionStorage.getItem('token');
+    if (!token) return of(false);
+
+    /* const headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${token}`);
+      return */
   }
 }
