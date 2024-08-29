@@ -9,6 +9,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ErrorMessageFriendlyPipe } from '../login/pipes/error-message-friendly.pipe';
 import { AuthService } from '../../services/auth.service';
 import { UserAuth } from '../../services/auth.service.model';
+import { BackAnchorComponent } from '../../../shared/back-anchor/back-anchor.component';
 
 @Component({
   selector: 'app-sign-up',
@@ -20,6 +21,7 @@ import { UserAuth } from '../../services/auth.service.model';
     MatButtonModule,
     MatDatepickerModule,
     ErrorMessageFriendlyPipe,
+    BackAnchorComponent
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
@@ -42,7 +44,7 @@ export class SignUpComponent implements OnInit {
     this.signUp();
   }
   
-  signUp() {
+  private signUp() {
     const user = this.formSignUp.value as UserAuth;
     this.authService.signUp(user)
     .subscribe({

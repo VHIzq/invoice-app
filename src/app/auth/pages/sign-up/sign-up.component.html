@@ -100,7 +100,13 @@
     >
       Sign Up
     </button>
-    
-    <span class="space-up">Back to login</span>
+
+    <app-back-anchor
+      [config]="{
+        url: '/auth/login',
+        name: 'Back to login',
+        hasIcon: false
+      }"
+    ></app-back-anchor>
   </form>
 </div>

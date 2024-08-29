@@ -1,6 +1,12 @@
 <section class="container">
   <!-- TODO: add no item páge when there are not any status invoice item after delete the last one -->
-  <app-back-anchor></app-back-anchor>
+  <app-back-anchor
+    [config]="{
+      url: '',
+      name: 'back',
+      hasIcon: true
+    }"
+  ></app-back-anchor>
   <div class="status-payment">
     <span><small>Status</small></span>
     <app-status-box></app-status-box>
