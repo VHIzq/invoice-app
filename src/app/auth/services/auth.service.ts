@@ -35,15 +35,14 @@ export class AuthService {
       user.email,
       user.password
     );
-    return from(promise)
-    .pipe(
-      tap((crendential) => {
+    return from(promise).pipe(
+      tap((credential) => {
         this._currentUser.set(user);
-        this._authStatus.set( AuthStatus.authenticated);
-        sessionStorage.setItem('token', crendential.user.refreshToken);
-        console.log({user});
-        console.log(crendential.user.refreshToken);
-      }),
+        this._authStatus.set(AuthStatus.authenticated);
+        sessionStorage.setItem('token', credential.user.refreshToken);
+        console.log({ user });
+        console.log(credential.user.refreshToken);
+      })
     );
   }
 
@@ -61,18 +60,9 @@ export class AuthService {
     return from(promise);
   } */
 
-    //TODO: add recovery password
+  //TODO: add recovery password
   resetPassword(email: string) {
     const promise = sendPasswordResetEmail(getAuth(), email);
     return from(promise);
-  }
-    //TODO: persistencu on sessions
-  checkAuthStatus(): Observable<boolean> {
-    const token = sessionStorage.getItem('token');
-    if (!token) return of(false);
-
-    /* const headers = new HttpHeaders()
-      .set('Authorization', `Bearer ${token}`);
-      return */
   }
 }

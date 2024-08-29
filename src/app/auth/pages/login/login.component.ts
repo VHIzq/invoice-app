@@ -24,7 +24,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
-  url = 'auth/sign-up';
+  url = '/auth/sign-up';
   formLogin!: FormGroup;
   errorMessage: string | null = null;
 
