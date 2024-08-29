@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormService } from '../../../services/form.service';
 import { Router, RouterModule } from '@angular/router';
 import { ErrorMessageFriendlyPipe } from './pipes/error-message-friendly.pipe';
-import { UserModel } from '../../services/auth.service.model';
+import { UserAuth } from '../../services/auth.service.model';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
   async login() {
     const isValidForm = this.formLogin.valid;
     if (isValidForm) {
-      const user = this.formLogin.value as UserModel;
+      const user = this.formLogin.value as UserAuth;
       this.authService.signIn(user).subscribe({
         next: () => {
           this.router.navigateByUrl('invoices/home');

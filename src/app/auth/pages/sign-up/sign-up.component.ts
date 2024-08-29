@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ErrorMessageFriendlyPipe } from '../login/pipes/error-message-friendly.pipe';
 import { AuthService } from '../../services/auth.service';
-import { UserModel } from '../../services/auth.service.model';
+import { UserAuth } from '../../services/auth.service.model';
 
 @Component({
   selector: 'app-sign-up',
@@ -43,7 +43,7 @@ export class SignUpComponent implements OnInit {
   }
   
   signUp() {
-    const user = this.formSignUp.value as UserModel;
+    const user = this.formSignUp.value as UserAuth;
     this.authService.signUp(user)
     .subscribe({
       next: () => {

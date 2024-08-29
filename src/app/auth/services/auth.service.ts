@@ -10,8 +10,8 @@ import {
   sendPasswordResetEmail,
   UserCredential,
 } from 'firebase/auth';
-import { UserModel } from './auth.service.model';
-import { from, Observable } from 'rxjs';
+import { UserAuth } from './auth.service.model';
+import { from, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -25,16 +25,21 @@ export class AuthService {
     return getAuth();
   }
 
-  signIn(user: UserModel): Observable<UserCredential> {
+  signIn(user: UserAuth): Observable<UserCredential> {
     const promise = signInWithEmailAndPassword(
       getAuth(),
       user.email,
       user.password
     );
-    return from(promise);
+    return from(promise).pipe(
+      tap((crendential) => {
+        localStorage.setItem('token', crendential.user.refreshToken);
+        console.log(crendential.user.refreshToken);
+      })
+    );
   }
 
-  signUp(user: UserModel): Observable<UserCredential> {
+  signUp(user: UserAuth): Observable<UserCredential> {
     const promise = createUserWithEmailAndPassword(
       getAuth(),
       user.email,
