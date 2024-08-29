@@ -6,8 +6,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormService } from '../../../services/form.service';
 import { Router, RouterModule } from '@angular/router';
 import { ErrorMessageFriendlyPipe } from './pipes/error-message-friendly.pipe';
-import { UserAuth,  UserSignIn } from '../../services/auth.service.model';
+import { UserSignIn } from '../../services/auth.service.model';
 import { AuthService } from '../../services/auth.service';
+import { BackAnchorComponent } from '../../../shared/back-anchor/back-anchor.component';
 
 @Component({
   selector: 'app-login',
@@ -19,17 +20,20 @@ import { AuthService } from '../../services/auth.service';
     MatInputModule,
     MatButtonModule,
     ErrorMessageFriendlyPipe,
+    BackAnchorComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
-  url = '/auth/sign-up';
+  urlSignup = '/auth/sign-up';
+  urlForgotPassword = '/auth/recovery-password';
+  urlHome = '/invoices/home';
   formLogin!: FormGroup;
   errorMessage: string | null = null;
 
   private formService = inject(FormService);
-  private authService =  inject(AuthService);
+  private authService = inject(AuthService);
   private router = inject(Router);
 
   ngOnInit(): void {
@@ -47,12 +51,12 @@ export class LoginComponent implements OnInit {
       const user = this.formLogin.value as UserSignIn;
       this.authService.signIn(user).subscribe({
         next: () => {
-          this.router.navigateByUrl('invoices/home');
+          this.router.navigateByUrl(this.urlHome);
         },
         error: (err) => {
           this.errorMessage = err.code;
         },
-      })
+      });
     }
   }
 

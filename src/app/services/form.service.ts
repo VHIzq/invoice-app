@@ -69,4 +69,26 @@ export class FormService {
       /* { validators: FormValidators.passwordsMatch('password', 'confirmPassword') } */
     );
   }
+
+  recoverPasswordForm() {
+    return this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(20),
+        ],
+      ],
+      confirmPassword: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(20),
+        ],
+      ],
+    })
+  }
 }

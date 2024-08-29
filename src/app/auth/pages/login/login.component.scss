@@ -15,6 +15,12 @@
   .error-message{
     color: stgs.$red-400;
   }
+
+  &__actions {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .form-container {

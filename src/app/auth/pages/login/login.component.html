@@ -44,7 +44,17 @@
     >
       Login
     </button>
-    <span class="space-up space-down"><small>Forgot password?</small></span>
+  </form>
+  <section class="container__actions">
+    <app-back-anchor
+      class="space-up"
+      [config]="{
+        url: urlForgotPassword,
+        name: 'Forgot password?',
+        hasIcon: false
+      }"
+    ></app-back-anchor>
+    
     @if (errorMessage) {
     <mat-label class="error-message">
       {{ errorMessage | appErrorMessageFriendly }}
@@ -52,7 +62,7 @@
     }
     <span class="space-up"
       >Dont have an account?
-      <span [routerLink]="url"><strong>Sign Up</strong></span></span
+      <span [routerLink]="urlSignup"><strong>Sign Up</strong></span></span
     >
-  </form>
+  </section>
 </div>
