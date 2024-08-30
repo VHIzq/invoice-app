@@ -4,18 +4,16 @@ import { AuthService } from '../services/auth.service';
 import { AuthStatus } from '../services/enums/auth-status.enum';
 
 export const isAuthenticatedGuard: CanActivateFn = (route, state) => {
-  // const url = state.url;
-  // localStorage.setItem('url', url);
-
   const authService = inject(AuthService);
   const router = inject(Router);
 
-  const isAuthenticated = authService.authStatus() === AuthStatus.authenticated;
+  const isAuthenticatedOnStatus = authService.authStatus() === AuthStatus.authenticated;
+  const isAuthenticatedOnCache =  sessionStorage.getItem('Authenticated') === 'authenticated';
 
-  if (!isAuthenticated) {
+  if (isAuthenticatedOnCache || isAuthenticatedOnStatus ) {
+    return true;
+  } else {
     router.navigateByUrl('/auth/login');
     return false;
   }
-
-  return true;
 };

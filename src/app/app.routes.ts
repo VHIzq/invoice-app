@@ -9,7 +9,7 @@ export const routes: Routes = [
   {
     path: 'invoices',
     loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
-    //canActivate: [isAuthenticatedGuard]
+    canActivate: [isAuthenticatedGuard]
   },
   {
     path: '**',

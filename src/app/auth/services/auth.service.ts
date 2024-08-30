@@ -38,7 +38,7 @@ export class AuthService {
       tap((credential) => {
         this._currentUser.set(user);
         this._authStatus.set(AuthStatus.authenticated);
-        sessionStorage.setItem('token', credential.user.refreshToken);
+        sessionStorage.setItem('Authenticated', AuthStatus.authenticated)
         console.log({ user });
         console.log(credential.user.refreshToken);
       })
