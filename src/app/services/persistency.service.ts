@@ -18,5 +18,6 @@ export class CacheService {
 
   removeItem(key: string) {
     localStorage.removeItem(key);
+    sessionStorage.removeItem(key)
   }
 }

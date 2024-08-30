@@ -42,6 +42,5 @@ export class HomeComponent {
   setupInitialInvoices() {
     this.invoiceService.getInvoiceData()
     .subscribe();
-    console.log('to subscription');
   }
 }

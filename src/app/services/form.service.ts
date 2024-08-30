@@ -66,7 +66,7 @@ export class FormService {
           ],
         ],
       },
-      /* { validators: FormValidators.passwordsMatch('password', 'confirmPassword') } */
+      { validators: FormValidators.passwordsMatch('password', 'confirmPassword') }
     );
   }
 

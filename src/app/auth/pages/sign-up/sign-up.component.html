@@ -89,14 +89,14 @@
     </mat-form-field>
 
     @if (errorMessage) {
-    <mat-label class="error-message">
+    <mat-label class="error-message space-up">
       {{ errorMessage | appErrorMessageFriendly }}
     </mat-label>
     }
     <button
       class="button-invoice button-m space-up space-down"
       type="submit"
-      [disabled]="!formSignUp.valid"
+      [disabled]="formSignUp.invalid"
     >
       Sign Up
     </button>

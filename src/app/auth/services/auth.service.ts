@@ -7,6 +7,7 @@ import {
   updateProfile,
   sendPasswordResetEmail,
   UserCredential,
+  signOut,
 } from 'firebase/auth';
 import { UserSignUp, UserSignIn } from './auth.service.model';
 import { from, Observable, tap } from 'rxjs';
@@ -35,12 +36,10 @@ export class AuthService {
       user.password
     );
     return from(promise).pipe(
-      tap((credential) => {
+      tap(() => {
         this._currentUser.set(user);
         this._authStatus.set(AuthStatus.authenticated);
-        sessionStorage.setItem('Authenticated', AuthStatus.authenticated)
-        console.log({ user });
-        console.log(credential.user.refreshToken);
+        sessionStorage.setItem('Authenticated', AuthStatus.authenticated);
       })
     );
   }
@@ -52,6 +51,17 @@ export class AuthService {
       user.password
     );
     return from(promise);
+  }
+
+  signOut() {
+    const promise = signOut(getAuth());
+    return from(promise).pipe(
+      tap(() => {
+        this._authStatus.set(AuthStatus.notAuthenticated);
+        sessionStorage.setItem('Authenticated', AuthStatus.notAuthenticated);
+        sessionStorage.removeItem('token');
+      })
+    );
   }
 
   /* updateUser(displayName: any) {

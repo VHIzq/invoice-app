@@ -43,6 +43,11 @@ export class SignUpComponent implements OnInit {
   handlerSignUp() {
     this.signUp();
   }
+
+  resetForm() {
+    this.formSignUp.controls['password'].reset('');
+    this.formSignUp.controls['confirmPassword'].reset('');
+  }
   
   private signUp() {
     const user = this.formSignUp.value as UserAuth;
@@ -53,6 +58,7 @@ export class SignUpComponent implements OnInit {
       },
       error: (err) => {
         this.errorMessage = err.code;
+        this.resetForm();
       },
     });
     
