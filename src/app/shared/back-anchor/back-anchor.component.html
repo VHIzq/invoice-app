@@ -1,7 +1,4 @@
-<!-- TODO: fix routerLink, is not routing -->
-<div
-class="back"
->
+<div class="back">
   @if (config.hasIcon) {
   <svg
     class="back__icon"
@@ -19,6 +16,6 @@ class="back"
   </svg>
   }
   <button class="back__button" (click)="handleNavigation()">
-     {{ config.name }}
+    {{ config.name }}
   </button>
 </div>

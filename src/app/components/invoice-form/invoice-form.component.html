@@ -1,5 +1,4 @@
 <!-- TODO: add guard - deactivated when leave editing without no save -->
- <!-- TODO: create Fn to discard new invoice on editing and redirect to home page -->
 <main class="form-container">
   <app-back-anchor
     [config]="{
@@ -11,7 +10,7 @@
   <h2 class="form-container__title">{{ titleForm }}</h2>
   <section class="form-container__from">
     <span class="form-container__subtitle">Bill From</span>
-    <form [formGroup]="formInvoice" (ngSubmit)="handleSubmit()">
+    <form [formGroup]="formInvoice" (ngSubmit)="saveAndSend()">
       <mat-form-field class="form-container__field">
         <mat-label>Street Address</mat-label>
         <input
@@ -158,10 +157,9 @@
       <app-item [itemAdded]="itemAdded" (onEditingItem)="onEditingItem = $event" ></app-item>
       <app-item-card  (newItem)="itemAdded = $event" [onEditingItem]="onEditingItem" ></app-item-card>
       <div class="invoice-form-buttons">
-        <button class="button-edit">Discard</button>
-        <!-- TODO: save on local storage for saving as draft -->
+        <button class="button-edit" (click)="handlerDiscardInvoice()" >Discard</button>
         <button class="button-draft button-m-vnt" (click)="handleSaveAsDraft()" >Save as Draft</button>
-        <button type="submit" class="button-invoice button-m" (click)="saveAndSend()" >
+        <button type="submit" class="button-invoice button-m">
           Save & Send
         </button>
       </div>

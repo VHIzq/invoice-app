@@ -24,6 +24,7 @@ import { Router } from '@angular/router';
   styleUrl: './status-invoice.component.scss',
 })
 export class StatusInvoiceComponent {
+  urlHome = '/invoices/home';
   constructor(private dialog: MatDialog, private router: Router) {}
 
   deleteInvoice() {

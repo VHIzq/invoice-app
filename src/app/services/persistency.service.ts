@@ -3,15 +3,17 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class PersistencyService {
+export class CacheService {
   constructor() {}
 
-  setItem(key: string, value: string) {
-    localStorage.setItem(key, value);
+  setItem(key: string, value: any) {
+    const serializeObject = JSON.stringify(value);
+    localStorage.setItem(key, serializeObject);
   }
 
   getItem(key: string) {
-    return localStorage.getItem(key);
+    const deserializeObject = JSON.parse(key);
+    return localStorage.getItem(deserializeObject);
   }
 
   removeItem(key: string) {

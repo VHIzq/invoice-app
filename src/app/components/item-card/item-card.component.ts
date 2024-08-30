@@ -36,7 +36,7 @@ export class ItemCardComponent implements OnInit, OnChanges {
     this.onEditingForm();
   }
 
-  addNewItem() {
+  handlerAddNewItem() {
     const item: ItemCard = {
       itemId: this.formItem.controls['itemId'].value,
       itemName: this.formItem.controls['itemName'].value,

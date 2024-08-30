@@ -8,13 +8,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterActionsComponent } from '../../shared/footer-actions/footer-actions.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BackAnchorComponent } from '../../shared/back-anchor/back-anchor.component';
 import { ItemCardComponent } from '../item-card/item-card.component';
 import { CommonModule } from '@angular/common';
 import { ItemCard } from '../../models/item-card.model';
 import { ItemComponent } from '../item/item.component';
-import { PersistencyService } from '../../services/persistency.service';
+import { CacheService } from '../../services/persistency.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-invoice-form',
@@ -40,21 +42,14 @@ export class InvoiceFormComponent implements OnInit {
   itemAdded!: ItemCard;
   onEditingItem?: ItemCard;
 
-  itemList: Array<ItemCard> = [
-    {
-      itemName: 'Paper',
-      quantity: '2',
-      price: '124',
-      total: '234',
-    },
-  ];
-
   private idInvoice = faker.number.int(2000);
 
   constructor(
     private formService: FormService,
     private route: ActivatedRoute,
-    private persistencyService: PersistencyService
+    private cacheService: CacheService,
+    private dialog: MatDialog,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -62,20 +57,47 @@ export class InvoiceFormComponent implements OnInit {
     this.setupTitleForm();
   }
 
-  handleSubmit() {
-    console.log('submit');
-  }
-
   handleSaveAsDraft() {
     //TODO: if is a pending invoice, must to retrieve data from local storage
     const controlKeys = Object.keys(this.formInvoice.controls);
     controlKeys.forEach((field) => {
-      this.persistencyService.setItem(field, this.formInvoice.controls[field].value);
+      this.cacheService.setItem(field, this.formInvoice.controls[field].value);
     });
   }
 
   saveAndSend() {
     console.log('put request to API');
+  }
+
+  handlerDiscardInvoice() {
+    this.openDialog('500ms', '200ms');
+  }
+
+  private removeLocalStorageInvoice() {
+    const controlKeys = Object.keys(this.formInvoice.controls);
+    controlKeys.forEach((key) => {
+      this.cacheService.removeItem(key);
+    });
+  }
+
+  private openDialog(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string,
+  ): void {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+
+    dialogRef.afterClosed().subscribe((confirmDelete) => {
+      const isDeleteAction = confirmDelete?.reason === 'deleteAction';
+      if (isDeleteAction) {
+        const urlHome = '/invoices/home';
+        this.removeLocalStorageInvoice();
+        this.router.navigateByUrl(urlHome);
+      }
+    })
   }
 
   private setupInitialForm() {

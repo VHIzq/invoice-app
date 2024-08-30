@@ -59,7 +59,6 @@ export class AuthService {
     return from(promise);
   } */
 
-  //TODO: add recovery password
   resetPassword(email: string) {
     const promise = sendPasswordResetEmail(getAuth(), email);
     return from(promise);
