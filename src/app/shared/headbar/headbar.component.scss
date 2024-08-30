@@ -30,6 +30,18 @@
     object-fit: contain;
     object-position: center;
   }
+
+}
+
+.headbar__menu {
+  color: stgs.$white-400;
+  text-align: center;
+  padding: 0px 10px;
+
+  .logout-item {
+    color: stgs.$red-400;
+  }
+
 }
 
 mat-toolbar {
