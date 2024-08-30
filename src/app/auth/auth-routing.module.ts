@@ -4,6 +4,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { RecoveryPasswordComponent } from './pages/recovery-password/recovery-password.component';
+import { SendEmailComponent } from './pages/send-email/send-email.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,12 @@ const routes: Routes = [
       {
         path: 'recovery-password',
         component: RecoveryPasswordComponent,
-        title: 'Recovery Password'
+        title: 'Recovery Password',
+      },
+      {
+        path: 'send-email',
+        component: SendEmailComponent,
+        title: 'Verify your email'
       },
       {
         path: '**', redirectTo: 'login'

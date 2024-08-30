@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BackAnchorComponent } from '../../../shared/back-anchor/back-anchor.component';
 import { FormService } from '../../../services/form.service';
 import { AuthService } from '../../services/auth.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-recovery-password',
@@ -17,6 +18,7 @@ import { AuthService } from '../../services/auth.service';
     ReactiveFormsModule,
     MatInputModule,
     BackAnchorComponent,
+    RouterModule
   ],
   templateUrl: './recovery-password.component.html',
   styleUrl: './recovery-password.component.scss',

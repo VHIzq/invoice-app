@@ -9,9 +9,8 @@ import {
   UserCredential,
 } from 'firebase/auth';
 import { UserSignUp, UserSignIn } from './auth.service.model';
-import { from, map, Observable, of, tap } from 'rxjs';
+import { from, Observable, tap } from 'rxjs';
 import { AuthStatus } from './enums/auth-status.enum';
-import { HttpHandler, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
