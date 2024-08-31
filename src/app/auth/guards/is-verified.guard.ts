@@ -4,12 +4,11 @@ import { AuthService } from '../services/auth.service';
 
 export const isVerifiedGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
-  const router = inject(Router);
-  const isVerified = authService.getAuth().currentUser?.emailVerified;
-  
-  if (isVerified) {
+  const isVerifiedOnStatus = authService.authVerified() === 'verified';
+  const isVerifiedOnCache = sessionStorage.getItem('verified') === 'verified';
+  if (isVerifiedOnStatus || isVerifiedOnCache) {
     return true;
   } else {
     return false;
   }
-};
+}

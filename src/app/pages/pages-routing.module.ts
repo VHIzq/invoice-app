@@ -32,7 +32,7 @@ const routes: Routes = [
         component: StatusInvoiceComponent,
         title: 'Status Invoice',
         data: { mode: 'status'}
-      },
+      }
     ]
   }
 ];

@@ -53,6 +53,7 @@ export class AuthService {
     const isVerified = this.getAuth().currentUser?.emailVerified;
     if (isVerified) {
       this._authVerified.set(VerifiedStatus.verified);
+      sessionStorage.setItem('verified', VerifiedStatus.verified);
     } else {
       this._authVerified.set(VerifiedStatus.notVerified);
     }

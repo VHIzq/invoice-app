@@ -27,6 +27,6 @@ export class HeadbarComponent {
   }
 
   goMyProfile() {
-    console.log(' go to my settings');
+    this.router.navigate(['/dashboard']);
   }
 }
