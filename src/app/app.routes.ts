@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { isAuthenticatedGuard } from './auth/guards/is-authenticated.guard';
+import { isVerifiedGuard } from './auth/guards/is-verified.guard';
 
 export const routes: Routes = [
   {
@@ -9,7 +10,7 @@ export const routes: Routes = [
   {
     path: 'invoices',
     loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
-    canActivate: [isAuthenticatedGuard]
+    canActivate: [isAuthenticatedGuard, isVerifiedGuard]
   },
   {
     path: '**',

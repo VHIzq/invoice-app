@@ -33,9 +33,9 @@ export class FormService {
 
   createLoginForm() {
     return this.fb.group({
-      email: ['user@gmail.com', [Validators.required, Validators.email]],
+      email: ['ubuntuxkepler@gmail.com', [Validators.required, Validators.email]],
       password: [
-        '1234567890',
+        'here123456',
         [
           Validators.required,
           Validators.minLength(8),
@@ -48,9 +48,9 @@ export class FormService {
   createSignUpForm() {
     return this.fb.group(
       {
-        email: ['', [Validators.required, Validators.email]],
+        email: ['ubuntuxkepler@gmail.com', [Validators.required, Validators.email]],
         password: [
-          '',
+          'here123456',
           [
             Validators.required,
             Validators.minLength(8),
@@ -58,7 +58,7 @@ export class FormService {
           ],
         ],
         confirmPassword: [
-          '',
+          'here123456',
           [
             Validators.required,
             Validators.minLength(8),

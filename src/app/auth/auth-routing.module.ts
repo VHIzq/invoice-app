@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { RecoveryPasswordComponent } from './pages/recovery-password/recovery-password.component';
 import { SendEmailComponent } from './pages/send-email/send-email.component';
+import { SendEmailVerifyComponent } from './pages/send-email-verify/send-email-verify.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,11 @@ const routes: Routes = [
       {
         path: 'send-email',
         component: SendEmailComponent,
+        title: 'Verify your email'
+      },
+      {
+        path: 'verify-email',
+        component: SendEmailVerifyComponent,
         title: 'Verify your email'
       },
       {

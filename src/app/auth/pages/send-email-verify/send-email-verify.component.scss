@@ -1,0 +1,6 @@
+@use '../../../utilities/mixins' as mixins;
+.container {
+    @include mixins.configMobileDisplay;
+    text-align: center;
+    padding-top: 30%;
+}

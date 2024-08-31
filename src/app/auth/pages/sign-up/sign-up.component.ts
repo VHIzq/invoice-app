@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ErrorMessageFriendlyPipe } from '../login/pipes/error-message-friendly.pipe';
 import { AuthService } from '../../services/auth.service';
-import { UserAuth } from '../../services/auth.service.model';
+import { UserSignUp } from '../../services/auth.service.model';
 import { BackAnchorComponent } from '../../../shared/back-anchor/back-anchor.component';
 
 @Component({
@@ -50,11 +50,11 @@ export class SignUpComponent implements OnInit {
   }
   
   private signUp() {
-    const user = this.formSignUp.value as UserAuth;
+    const user = this.formSignUp.value as UserSignUp;
     this.authService.signUp(user)
     .subscribe({
       next: () => {
-        this.router.navigateByUrl('home');
+        this.router.navigateByUrl('/auth/verify-email');
       },
       error: (err) => {
         this.errorMessage = err.code;

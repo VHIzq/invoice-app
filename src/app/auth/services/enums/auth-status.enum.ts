@@ -3,3 +3,9 @@ export enum AuthStatus {
     authenticated = 'authenticated',
     notAuthenticated = 'notAuthenticated'
 }
+
+export enum VerifiedStatus {
+    checking = 'checking',
+    verified = 'verified',
+    notVerified = 'notVerified'
+}

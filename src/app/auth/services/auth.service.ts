@@ -1,3 +1,4 @@
+
 import { computed, Injectable, signal } from '@angular/core';
 
 import {
@@ -8,6 +9,8 @@ import {
   sendPasswordResetEmail,
   UserCredential,
   signOut,
+  sendEmailVerification,
+  User
 } from 'firebase/auth';
 import { UserSignUp, UserSignIn } from './auth.service.model';
 import { from, Observable, tap } from 'rxjs';
@@ -19,6 +22,7 @@ import { AuthStatus } from './enums/auth-status.enum';
 export class AuthService {
   private _currentUser = signal<UserSignUp | null>(null);
   private _authStatus = signal<AuthStatus>(AuthStatus.checking);
+  //TODO: verify status
 
   //? Exposed interface
   public currentUser = computed(() => this._currentUser());
@@ -50,7 +54,11 @@ export class AuthService {
       user.email,
       user.password
     );
-    return from(promise);
+    return from(promise).pipe(
+      tap((credential) => {
+        sendEmailVerification(credential.user);
+      })
+    )
   }
 
   signOut() {
