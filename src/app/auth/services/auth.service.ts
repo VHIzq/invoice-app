@@ -14,7 +14,7 @@ import {
 } from 'firebase/auth';
 import { UserSignUp, UserSignIn } from './auth.service.model';
 import { from, Observable, tap } from 'rxjs';
-import { AuthStatus } from './enums/auth-status.enum';
+import { AuthStatus, VerifiedStatus } from './enums/auth-status.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -22,11 +22,12 @@ import { AuthStatus } from './enums/auth-status.enum';
 export class AuthService {
   private _currentUser = signal<UserSignUp | null>(null);
   private _authStatus = signal<AuthStatus>(AuthStatus.checking);
-  //TODO: verify status
+  private _authVerified = signal<VerifiedStatus>(VerifiedStatus.checking);
 
   //? Exposed interface
   public currentUser = computed(() => this._currentUser());
   public authStatus = computed(() => this._authStatus());
+  public authVerified = computed(() => this._authVerified());
   //? Exposed interface
 
   getAuth() {
@@ -46,6 +47,15 @@ export class AuthService {
         sessionStorage.setItem('Authenticated', AuthStatus.authenticated);
       })
     );
+  }
+
+  setStatusUserVerified() {
+    const isVerified = this.getAuth().currentUser?.emailVerified;
+    if (isVerified) {
+      this._authVerified.set(VerifiedStatus.verified);
+    } else {
+      this._authVerified.set(VerifiedStatus.notVerified);
+    }
   }
 
   signUp(user: UserSignUp): Observable<UserCredential> {

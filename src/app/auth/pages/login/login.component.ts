@@ -51,7 +51,13 @@ export class LoginComponent implements OnInit {
       const user = this.formLogin.value as UserSignIn;
       this.authService.signIn(user).subscribe({
         next: () => {
-          this.router.navigateByUrl(this.urlHome);
+          this.authService.setStatusUserVerified();
+          const isVerified = this.authService.authVerified() === 'verified';
+          if (isVerified) {
+            this.router.navigateByUrl(this.urlHome);
+          } else {
+            this.router.navigateByUrl('auth/verify-email');
+          }
         },
         error: (err) => {
           this.errorMessage = err.code;
